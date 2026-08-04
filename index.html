@@ -2,118 +2,224 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Seema Digital | Google Review</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>⭐ Seema Digital | Google Review</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
-}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
 
 body{
-background:#f4f7fb;
+background:linear-gradient(-45deg,#4285F4,#34A853,#FBBC05,#EA4335);
+background-size:400% 400%;
+animation:bg 12s ease infinite;
 display:flex;
 justify-content:center;
 align-items:center;
 min-height:100vh;
 padding:20px;
+overflow-x:hidden;
+}
+
+@keyframes bg{
+0%{background-position:0 50%}
+50%{background-position:100% 50%}
+100%{background-position:0 50%}
+}
+
+.loader{
+position:fixed;
+inset:0;
+background:#111;
+display:flex;
+justify-content:center;
+align-items:center;
+color:#fff;
+font-size:28px;
+z-index:9999;
+transition:.5s;
 }
 
 .card{
-max-width:430px;
+
 width:100%;
-background:#fff;
-border-radius:20px;
+max-width:430px;
+
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(18px);
+border-radius:25px;
 padding:30px;
-box-shadow:0 10px 35px rgba(0,0,0,.15);
 text-align:center;
+color:#fff;
+
+box-shadow:0 20px 60px rgba(0,0,0,.35);
+
+animation:up 1s;
+
+}
+
+@keyframes up{
+
+from{
+opacity:0;
+transform:translateY(60px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
 }
 
 .logo{
-font-size:34px;
+
+font-size:55px;
+
 }
 
 h1{
+
 margin-top:10px;
-font-size:30px;
-color:#1f2937;
+font-size:32px;
+
 }
 
-.sub{
-margin-top:8px;
-color:#666;
-font-size:15px;
-line-height:24px;
+p{
+
+margin-top:15px;
+line-height:28px;
+
+}
+
+.btn{
+
+display:block;
+margin-top:18px;
+padding:16px;
+border-radius:15px;
+text-decoration:none;
+font-weight:700;
+font-size:18px;
+transition:.3s;
+position:relative;
+overflow:hidden;
+
 }
 
 .review{
-display:block;
-margin-top:28px;
-background:#4285F4;
-color:#fff;
-padding:18px;
-border-radius:12px;
-font-size:19px;
-font-weight:700;
-text-decoration:none;
-transition:.3s;
-}
 
-.review:hover{
-background:#2d6cdf;
-}
+background:#fff;
+color:#4285F4;
 
-.note{
-margin-top:18px;
-font-size:14px;
-color:#666;
 }
 
 .whatsapp{
-display:block;
-margin-top:18px;
+
 background:#25D366;
-color:white;
-padding:16px;
-border-radius:12px;
+color:#fff;
+
+}
+
+.call{
+
+background:#0d6efd;
+color:#fff;
+
+}
+
+.maps{
+
+background:#EA4335;
+color:#fff;
+
+}
+
+.btn:hover{
+
+transform:scale(1.05);
+
+}
+
+.floating{
+
+position:fixed;
+right:18px;
+bottom:18px;
+
+display:flex;
+flex-direction:column;
+gap:12px;
+
+}
+
+.float{
+
+width:58px;
+height:58px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
 text-decoration:none;
-font-weight:700;
-font-size:18px;
+font-size:28px;
+color:#fff;
+box-shadow:0 8px 20px rgba(0,0,0,.35);
+
+}
+
+.w{background:#25D366}
+.c{background:#0d6efd}
+.m{background:#EA4335}
+
+.toggle{
+
+position:fixed;
+left:15px;
+top:15px;
+cursor:pointer;
+font-size:28px;
+
+}
+
+.dark{
+
+background:#111!important;
+
 }
 
 .footer{
-margin-top:30px;
-padding-top:20px;
-border-top:1px solid #eee;
-font-size:14px;
-line-height:24px;
-color:#555;
-}
 
-.phone{
-font-size:18px;
-font-weight:bold;
-margin-top:10px;
-}
-
-.thank{
 margin-top:25px;
-padding:15px;
-background:#fff8e1;
-border-radius:10px;
-font-size:15px;
-font-weight:600;
-color:#444;
+font-size:14px;
+
 }
+
+canvas{
+
+position:fixed;
+inset:0;
+pointer-events:none;
+
+}
+
 </style>
 
 </head>
+
 <body>
+
+<div class="loader" id="loader">
+
+✨ Loading...
+
+</div>
+
+<div class="toggle" onclick="mode()">🌙</div>
+
+<canvas id="canvas"></canvas>
 
 <div class="card">
 
@@ -121,47 +227,147 @@ color:#444;
 
 <h1>SEEMA DIGITAL</h1>
 
-<p class="sub">
-आपका विश्वास ही हमारी पहचान है ❤️<br><br>
-अगर आपको हमारी सेवा पसंद आई हो,<br>
-तो कृपया Google पर अपना Review जरूर दें।
+<p>
+
+Aapka ek ⭐⭐⭐⭐⭐ Review
+hamare liye bahut keemti hai.
+
 </p>
 
-<a class="review"
+<a class="btn review"
+
+onclick="boom()"
+
 href="https://g.page/r/CXrOb5EcYE5UEAI/review?utm_source=gbp&utm_medium=reviews&utm_campaign=qr"
+
 target="_blank">
-⭐⭐⭐⭐⭐ Google Review दें
+
+⭐⭐⭐⭐⭐ Google Review
+
 </a>
 
-<p class="note">
-Review देने के बाद नीचे दिए गए बटन पर क्लिक करें।
-</p>
+<a class="btn whatsapp"
 
-<a class="whatsapp"
-href="https://wa.me/919767610061?text=Namaste%20Seema%20Digital,%20maine%20Google%20par%20review%20de%20diya%20hai."
+href="https://wa.me/919767610061?text=Namaste%20Seema%20Digital,%20maine%20review%20de%20diya."
+
 target="_blank">
-💬 Continue to WhatsApp
+
+💬 WhatsApp
+
 </a>
 
-<div class="thank">
-🙏 आपका एक Review हमारे लिए हजारों विज्ञापनों से भी ज्यादा कीमती है।
-</div>
+<a class="btn call"
+
+href="tel:+919767610061">
+
+📞 Call Now
+
+</a>
+
+<a class="btn maps"
+
+href="https://maps.google.com/?q=Seema%20Digital%20Kannad"
+
+target="_blank">
+
+📍 Open Map
+
+</a>
 
 <div class="footer">
 
-<strong>✨ SEEMA DIGITAL ✨</strong>
+✨ SEEMA DIGITAL ✨
 
-<div class="phone">
+<br><br>
+
 📞 9767610061
-</div>
 
-📍 Near Panchayat Samiti Quarter<br>
-Opp. Namokar Super Mart<br>
+<br>
+
+Near Panchayat Samiti Quarter
+
+<br>
+
+Opp. Namokar Super Mart
+
+<br>
+
 Bus Stand Road, Kannad
 
 </div>
 
 </div>
+
+<div class="floating">
+
+<a class="float w"
+
+href="https://wa.me/919767610061">💬</a>
+
+<a class="float c"
+
+href="tel:+919767610061">📞</a>
+
+<a class="float m"
+
+href="https://maps.google.com/?q=Seema%20Digital%20Kannad">📍</a>
+
+</div>
+
+<script>
+
+setTimeout(()=>{
+
+loader.style.opacity=0;
+loader.style.visibility="hidden";
+
+},1800)
+
+function mode(){
+
+document.body.classList.toggle("dark")
+
+}
+
+function boom(){
+
+if(navigator.vibrate)
+
+navigator.vibrate([120,60,120])
+
+const c=document.getElementById("canvas")
+
+const x=c.getContext("2d")
+
+c.width=innerWidth
+
+c.height=innerHeight
+
+for(let i=0;i<180;i++){
+
+setTimeout(()=>{
+
+x.fillStyle=`hsl(${Math.random()*360},100%,60%)`
+
+x.beginPath()
+
+x.arc(Math.random()*c.width,Math.random()*c.height,4,0,6.28)
+
+x.fill()
+
+},i*5)
+
+}
+
+setTimeout(()=>{
+
+x.clearRect(0,0,c.width,c.height)
+
+},2500)
+
+}
+
+</script>
 
 </body>
 </html>
