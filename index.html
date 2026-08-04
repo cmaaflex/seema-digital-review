@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Seema Digital | Google Review</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>⭐ Seema Digital | Google Review</title>
 
 <meta name="theme-color" content="#EA4335">
-<meta name="description" content="Seema Digital Kannad">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,66 +25,25 @@ box-sizing:border-box;
 font-family:Poppins,sans-serif;
 }
 
-html{
-scroll-behavior:smooth;
-}
-
 body{
 
-background:#0f172a;
-overflow-x:hidden;
-color:#fff;
-
-}
-
-.bg{
-
-position:fixed;
-inset:0;
-z-index:-2;
-
-background:
-linear-gradient(-45deg,#4285F4,#34A853,#EA4335,#FBBC05);
+background:linear-gradient(-45deg,#4285F4,#34A853,#EA4335,#FBBC05);
 
 background-size:400% 400%;
 
-animation:gradient 15s ease infinite;
+animation:bg 15s ease infinite;
+
+color:#fff;
+
+overflow-x:hidden;
 
 }
 
-@keyframes gradient{
+@keyframes bg{
 
-0%{background-position:0 50%;}
+0%{background-position:0% 50%;}
 50%{background-position:100% 50%;}
-100%{background-position:0 50%;}
-
-}
-
-.bg::after{
-
-content:"";
-
-position:absolute;
-
-inset:0;
-
-background:
-
-radial-gradient(circle at 20% 20%,rgba(255,255,255,.25),transparent 30%),
-
-radial-gradient(circle at 80% 70%,rgba(255,255,255,.15),transparent 35%),
-
-radial-gradient(circle at 50% 50%,rgba(255,255,255,.10),transparent 50%);
-
-animation:move 18s linear infinite;
-
-}
-
-@keyframes move{
-
-0%{transform:rotate(0deg) scale(1);}
-50%{transform:rotate(180deg) scale(1.2);}
-100%{transform:rotate(360deg) scale(1);}
+100%{background-position:0% 50%;}
 
 }
 
@@ -98,21 +57,21 @@ padding:18px;
 
 }
 
-.card{
-
-backdrop-filter:blur(20px);
+.glass{
 
 background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(18px);
 
 border:1px solid rgba(255,255,255,.18);
 
 border-radius:28px;
 
-padding:18px;
+overflow:hidden;
 
 box-shadow:0 20px 60px rgba(0,0,0,.35);
 
-animation:up 1s;
+animation:up .8s;
 
 }
 
@@ -134,35 +93,37 @@ transform:none;
 
 width:100%;
 
-border-radius:20px;
-
 display:block;
-
-box-shadow:0 10px 35px rgba(0,0,0,.3);
 
 }
 
-.badge{
+.header{
 
-margin:18px auto;
+padding:20px;
 
-display:inline-flex;
+text-align:center;
 
-gap:8px;
+}
 
-padding:10px 18px;
+.rating{
 
-border-radius:50px;
+display:inline-block;
+
+padding:8px 18px;
 
 background:#fff;
 
-color:#222;
+color:#333;
+
+border-radius:50px;
 
 font-weight:700;
 
+margin-bottom:14px;
+
 }
 
-.badge i{
+.rating i{
 
 color:#FBBC05;
 
@@ -170,71 +131,53 @@ color:#FBBC05;
 
 h1{
 
-margin-top:10px;
-
 font-size:34px;
 
 font-weight:800;
 
-text-align:center;
+margin-bottom:10px;
 
 }
 
-.sub{
+.subtitle{
 
-margin-top:12px;
+font-size:16px;
 
-text-align:center;
-
-font-size:17px;
-
-line-height:30px;
+line-height:28px;
 
 opacity:.95;
 
 }
 
-.btn{
+.review{
 
-display:flex;
+display:block;
 
-align-items:center;
-
-justify-content:center;
-
-gap:12px;
-
-margin-top:18px;
+margin-top:22px;
 
 padding:18px;
+
+text-align:center;
+
+background:#fff;
+
+color:#4285F4;
+
+font-size:20px;
+
+font-weight:700;
 
 border-radius:18px;
 
 text-decoration:none;
 
-font-size:18px;
-
-font-weight:700;
-
-transition:.25s;
-
-position:relative;
-
-overflow:hidden;
+transition:.3s;
 
 }
 
-.btn:hover{
+.review:hover{
 
-transform:translateY(-4px) scale(1.02);
-
-}
-
-.review{
-
-background:#fff;
-
-color:#4285F4;
+transform:translateY(-3px);
 
 }
 
@@ -244,11 +187,101 @@ color:#FBBC05;
 
 }
 
-.whatsapp{
+.section{
 
-background:#25D366;
+padding:22px;
+
+}
+
+.section h2{
+
+font-size:22px;
+
+margin-bottom:15px;
+
+}
+
+.cards{
+
+display:grid;
+
+gap:18px;
+
+}
+
+.card{
+
+background:rgba(255,255,255,.10);
+
+border-radius:18px;
+
+padding:18px;
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-6px);
+
+}
+
+.icon{
+
+font-size:42px;
+
+margin-bottom:12px;
+
+}
+
+.name{
+
+font-size:21px;
+
+font-weight:700;
+
+}
+
+.role{
+
+opacity:.8;
+
+margin:6px 0 15px;
+
+}
+
+.btn{
+
+display:block;
+
+margin-top:10px;
+
+padding:14px;
+
+border-radius:14px;
+
+text-decoration:none;
+
+font-weight:700;
 
 color:#fff;
+
+transition:.3s;
+
+}
+
+.btn:hover{
+
+transform:scale(1.04);
+
+}
+
+.wa{
+
+background:#25D366;
 
 }
 
@@ -256,47 +289,105 @@ color:#fff;
 
 background:#2563eb;
 
-color:#fff;
-
 }
 
 .map{
 
 background:#EA4335;
 
-color:#fff;
+}
+
+.group{
+
+background:#128C7E;
 
 }
 
-.note{
+.address{
 
-margin-top:22px;
+background:rgba(255,255,255,.10);
 
-background:rgba(255,255,255,.12);
+border-radius:18px;
 
-padding:16px;
-
-border-radius:16px;
+padding:20px;
 
 text-align:center;
 
-font-size:15px;
+line-height:30px;
 
-line-height:28px;
+margin-top:20px;
+
+}
+
+.services{
+
+padding:22px;
+
+}
+
+details{
+
+background:rgba(255,255,255,.10);
+
+margin-top:14px;
+
+border-radius:18px;
+
+overflow:hidden;
+
+}
+
+summary{
+
+list-style:none;
+
+cursor:pointer;
+
+padding:18px;
+
+font-size:18px;
+
+font-weight:700;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+}
+
+summary::-webkit-details-marker{
+
+display:none;
+
+}
+
+summary small{
+
+opacity:.7;
+
+font-weight:500;
+
+}
+
+details ul{
+
+padding:0 22px 18px 42px;
+
+line-height:32px;
 
 }
 
 .footer{
 
-margin-top:26px;
-
-padding-top:22px;
-
-border-top:1px solid rgba(255,255,255,.18);
+padding:30px;
 
 text-align:center;
 
 line-height:30px;
+
+font-size:15px;
 
 }
 
@@ -330,49 +421,19 @@ align-items:center;
 
 justify-content:center;
 
-color:#fff;
-
-font-size:24px;
-
 text-decoration:none;
 
-box-shadow:0 12px 30px rgba(0,0,0,.35);
+color:#fff;
 
-transition:.3s;
+font-size:22px;
 
-}
-
-.float a:hover{
-
-transform:scale(1.12);
+box-shadow:0 10px 25px rgba(0,0,0,.35);
 
 }
 
-.f1{background:#25D366;}
-.f2{background:#2563eb;}
-.f3{background:#EA4335;}
-
-@media(max-width:500px){
-
-h1{
-
-font-size:28px;
-
-}
-
-.sub{
-
-font-size:16px;
-
-}
-
-.btn{
-
-font-size:17px;
-
-}
-
-}
+.fwa{background:#25D366;}
+.fcall{background:#2563eb;}
+.fmap{background:#EA4335;}
 
 </style>
 
@@ -380,57 +441,73 @@ font-size:17px;
 
 <body>
 
-<div class="bg"></div>
-
 <div class="container">
 
-<div class="card">
+<div class="glass">
 
 <img src="assets/banner.jpg" class="banner">
 
-<div style="text-align:center">
+<div class="header">
 
-<div class="badge">
+<div class="rating">
+
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+
+&nbsp; Google Verified
+
+</div>
+
+<h1>✨ SEEMA DIGITAL ✨</h1>
+
+<div class="subtitle">
+
+🙏 तुमचा एक Review आमच्यासाठी खूप महत्त्वाचा आहे.
+
+जर आमची सेवा आवडली असेल तर कृपया Google वर Review द्या.
+
+</div>
+
+<a class="review"
+
+id="reviewBtn"
+
+target="_blank"
+
+href="https://g.page/r/CXrOb5EcYE5UEAI/review?utm_source=gbp&utm_medium=reviews&utm_campaign=qr">
 
 <i class="fa-solid fa-star"></i>
 
-Google Verified Business
-
-</div>
-
-</div>
-
-<h1>⭐ SEEMA DIGITAL</h1>
-
-<div class="sub">
-
-🙏 आपका एक Review हमारे लिए हजारों विज्ञापनों से भी ज्यादा कीमती है।
-
-अगर हमारी सेवा पसंद आई हो तो कृपया Google पर अपना Review जरूर दें।
-
-</div>
-
-<a class="btn review"
-
-href="https://g.page/r/CXrOb5EcYE5UEAI/review?utm_source=gbp&utm_medium=reviews&utm_campaign=qr"
-
-target="_blank">
-
-<i class="fa-solid fa-star"></i>
-
-⭐⭐⭐⭐⭐ Google Review दें
+⭐⭐⭐⭐⭐ Google Review
 
 </a>
 
-<a class="btn whatsapp"
+</div>
 
-href="https://wa.me/919767610061?text=Namaste%20Seema%20Digital,%20maine%20Google%20par%20review%20de%20diya."
+<div class="section">
 
-target="_blank">
+<h2>📞 Contact</h2>
 
-<i class="fa-brands fa-whatsapp"></i>
+<div class="cards">
 
-Continue to WhatsApp
+<div class="card">
+
+<div class="icon">👨‍💼</div>
+
+<div class="name">Mubin Shaikh</div>
+
+<div class="role">Main Admin</div>
+
+<a class="btn wa"
+
+target="_blank"
+
+href="https://wa.me/919767610061">
+
+💬 WhatsApp
 
 </a>
 
@@ -438,33 +515,247 @@ Continue to WhatsApp
 
 href="tel:+919767610061">
 
-<i class="fa-solid fa-phone"></i>
-
-Call Now
+📞 Call Now
 
 </a>
+
+</div>
+
+<div class="card">
+
+<div class="icon">🏪</div>
+
+<div class="name">Seema Digital</div>
+
+<div class="role">Shop Contact</div>
+
+<a class="btn wa"
+
+target="_blank"
+
+href="https://wa.me/919561869422">
+
+💬 WhatsApp
+
+</a>
+
+<a class="btn call"
+
+href="tel:+919561869422">
+
+📞 Call Now
+
+</a>
+
+</div>
+
+</div>
+
+<div class="address">
+
+📍 पंचायत समिती क्वार्टर जवळ<br>
+
+नमोकार सुपर मार्ट समोर<br>
+
+बस स्टॅण्ड रोड, कन्नड
+
+<br><br>
 
 <a class="btn map"
 
-href="https://maps.google.com/?q=Seema+Digital+Kannad"
+target="_blank"
 
-target="_blank">
+href="https://maps.google.com/?q=Seema+Digital+Kannad">
 
-<i class="fa-solid fa-location-dot"></i>
-
-Open Location
+🗺 Open Google Maps
 
 </a>
 
-<div class="note">
+</div>
 
-❤️ Thank You for Supporting Local Business
+<a class="btn group"
+
+target="_blank"
+
+href="https://chat.whatsapp.com/CFzoN2GLvGVAsxUBkMVuXj">
+
+💚 Join WhatsApp Group
+
+</a>
+
+</div>
+
+<div class="services">
+
+<h2 align="center">
+
+🎯 उपलब्ध सेवा
+
+</h2>
+
+<details open>
+
+<summary>
+
+🖨 Printing Services
+
+<small>8 Services</small>
+
+</summary>
+
+<ul>
+
+<li>Digital Banner</li>
+
+<li>Bill Book</li>
+
+<li>Visiting Card</li>
+
+<li>Labels & Stickers</li>
+
+<li>Photo Printing</li>
+
+<li>Document Printing</li>
+
+<li>Wedding Card</li>
+
+<li>Offset Printing</li>
+
+</ul>
+
+</details>
+
+<details>
+
+<summary>
+
+🏦 Banking Services
+
+<small>8 Services</small>
+
+</summary>
+
+<ul>
+
+<li>AEPS</li>
+
+<li>Mini ATM</li>
+
+<li>Money Transfer</li>
+
+<li>Credit Card Cash</li>
+
+<li>Bill Payment</li>
+
+<li>HDFC Account</li>
+
+<li>Airtel Account</li>
+
+<li>Loan EMI Payment</li>
+
+</ul>
+
+</details>
+
+<details>
+
+<summary>
+
+💳 PAN Card Services
+
+<small>6 Services</small>
+
+</summary>
+
+<ul>
+
+<li>New PAN</li>
+
+<li>PAN Correction</li>
+
+<li>Original PAN</li>
+
+<li>Lost PAN Search</li>
+
+<li>Aadhaar Link</li>
+
+<li>Difficult Correction</li>
+
+</ul>
+
+</details>
+
+<details>
+
+<summary>
+
+🪪 PVC Smart Cards
+
+<small>7 Services</small>
+
+</summary>
+
+<ul>
+
+<li>Aadhaar PVC</li>
+
+<li>Ayushman Card</li>
+
+<li>ABHA Card</li>
+
+<li>E-Shram Card</li>
+
+<li>Disability Card</li>
+
+<li>Voter Card</li>
+
+<li>ID Card</li>
+
+</ul>
+
+</details>
+
+<details>
+
+<summary>
+
+🌐 Online Services
+
+<small>22+ Services</small>
+
+</summary>
+
+<ul>
+
+<li>Shop Act</li>
+
+<li>Udyam</li>
+
+<li>FSSAI</li>
+
+<li>Police Verification</li>
+
+<li>Scholarship</li>
+
+<li>PF</li>
+
+<li>Driving Licence PVC</li>
+
+<li>Vehicle Insurance</li>
+
+<li>All Online Forms</li>
+
+<li>...And Many More</li>
+
+</ul>
+
+</details>
 
 </div>
 
 <div class="footer">
 
-<b>✨ SEEMA DIGITAL ✨</b>
+✨ <b>SEEMA DIGITAL</b> ✨
 
 <br>
 
@@ -472,17 +763,7 @@ Open Location
 
 <br>
 
-📍 Near Panchayat Samiti Quarter
-
-<br>
-
-Opp. Namokar Super Mart
-
-<br>
-
-Bus Stand Road, Kannad
-
-</div>
+❤️ Thank You For Supporting Local Business
 
 </div>
 
@@ -490,31 +771,286 @@ Bus Stand Road, Kannad
 
 <div class="float">
 
-<a class="f1"
+<a class="fwa" href="https://wa.me/919767610061">
 
-href="https://wa.me/919767610061">
-
-<i class="fa-brands fa-whatsapp"></i>
+<i class="fab fa-whatsapp"></i>
 
 </a>
 
-<a class="f2"
+<a class="fcall" href="tel:+919767610061">
 
-href="tel:+919767610061">
-
-<i class="fa-solid fa-phone"></i>
+<i class="fa fa-phone"></i>
 
 </a>
 
-<a class="f3"
+<a class="fmap" href="https://maps.google.com/?q=Seema+Digital+Kannad">
 
-href="https://maps.google.com/?q=Seema+Digital+Kannad">
-
-<i class="fa-solid fa-location-dot"></i>
+<i class="fa fa-location-dot"></i>
 
 </a>
 
 </div>
+
+<!-- PART-2 me yahin se JavaScript start hoga -->
+  <script>
+
+// ========= Smooth Card Animation =========
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.animate([
+{opacity:0,transform:"translateY(40px)"},
+{opacity:1,transform:"translateY(0px)"}
+],{
+duration:700,
+fill:"forwards"
+});
+}
+});
+});
+
+document.querySelectorAll(".card,details,.address,.review,.group")
+.forEach(el=>observer.observe(el));
+
+
+// ========= Floating Background Particles =========
+
+for(let i=0;i<25;i++){
+
+let p=document.createElement("div");
+
+p.style.position="fixed";
+
+p.style.width=Math.random()*12+6+"px";
+
+p.style.height=p.style.width;
+
+p.style.borderRadius="50%";
+
+p.style.opacity=".18";
+
+p.style.background="white";
+
+p.style.left=Math.random()*100+"vw";
+
+p.style.top=Math.random()*100+"vh";
+
+p.style.pointerEvents="none";
+
+p.style.zIndex="-1";
+
+document.body.appendChild(p);
+
+let y=Math.random()*40+20;
+
+p.animate([
+
+{transform:"translateY(0px)"},
+
+{transform:`translateY(-${y}px)`},
+
+{transform:"translateY(0px)"}
+
+],{
+
+duration:Math.random()*4000+5000,
+
+iterations:Infinity
+
+});
+
+}
+
+
+// ========= Ripple Effect =========
+
+document.querySelectorAll(".btn,.review").forEach(btn=>{
+
+btn.style.position="relative";
+
+btn.style.overflow="hidden";
+
+btn.addEventListener("click",function(e){
+
+let ripple=document.createElement("span");
+
+let size=Math.max(this.clientWidth,this.clientHeight);
+
+ripple.style.width=size+"px";
+
+ripple.style.height=size+"px";
+
+ripple.style.position="absolute";
+
+ripple.style.borderRadius="50%";
+
+ripple.style.background="rgba(255,255,255,.45)";
+
+ripple.style.left=(e.offsetX-size/2)+"px";
+
+ripple.style.top=(e.offsetY-size/2)+"px";
+
+ripple.style.transform="scale(0)";
+
+ripple.style.transition=".6s";
+
+this.appendChild(ripple);
+
+setTimeout(()=>{
+
+ripple.style.transform="scale(3)";
+
+ripple.style.opacity="0";
+
+},10);
+
+setTimeout(()=>ripple.remove(),600);
+
+});
+
+});
+
+
+// ========= Button Hover Glow =========
+
+document.querySelectorAll(".btn,.review").forEach(b=>{
+
+b.addEventListener("mouseenter",()=>{
+
+b.style.boxShadow="0 0 35px rgba(255,255,255,.45)";
+
+});
+
+b.addEventListener("mouseleave",()=>{
+
+b.style.boxShadow="none";
+
+});
+
+});
+
+
+// ========= Google Review Click =========
+
+document.getElementById("reviewBtn").addEventListener("click",()=>{
+
+if(navigator.vibrate){
+
+navigator.vibrate([120,60,120]);
+
+}
+
+});
+
+
+// ========= Floating Buttons Pulse =========
+
+document.querySelectorAll(".float a").forEach(btn=>{
+
+btn.animate([
+
+{transform:"scale(1)"},
+
+{transform:"scale(1.12)"},
+
+{transform:"scale(1)"}
+
+],{
+
+duration:1800,
+
+iterations:Infinity
+
+});
+
+});
+
+
+// ========= Title Animation =========
+
+const titles=[
+"⭐ Google Review",
+"✨ Seema Digital",
+"💚 Thank You",
+"📍 Kannad"
+];
+
+let t=0;
+
+setInterval(()=>{
+
+document.title=titles[t];
+
+t++;
+
+if(t>=titles.length)t=0;
+
+},2500);
+
+
+// ========= Scroll To Top =========
+
+let topBtn=document.createElement("button");
+
+topBtn.innerHTML="⬆";
+
+topBtn.style.position="fixed";
+
+topBtn.style.left="18px";
+
+topBtn.style.bottom="18px";
+
+topBtn.style.width="55px";
+
+topBtn.style.height="55px";
+
+topBtn.style.border="none";
+
+topBtn.style.borderRadius="50%";
+
+topBtn.style.background="#ffffff";
+
+topBtn.style.color="#111";
+
+topBtn.style.fontSize="22px";
+
+topBtn.style.cursor="pointer";
+
+topBtn.style.display="none";
+
+topBtn.style.boxShadow="0 10px 25px rgba(0,0,0,.35)";
+
+document.body.appendChild(topBtn);
+
+window.addEventListener("scroll",()=>{
+
+topBtn.style.display=window.scrollY>300?"block":"none";
+
+});
+
+topBtn.onclick=()=>{
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+};
+
+
+// ========= Footer Year =========
+
+let footer=document.querySelector(".footer");
+
+footer.innerHTML+=
+
+"<br><br>© "+new Date().getFullYear()+" Seema Digital";
+
+</script>
 
 </body>
 
