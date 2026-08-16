@@ -1,2108 +1,492 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>⭐ Seema Digital | Google Review</title>
-
-<meta name="theme-color" content="#EA4335">
-
+<meta name="theme-color" content="#080609">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-
 :root{
-    --red:#ef2028;
-    --red2:#ff4b52;
-    --dark:#050507;
-    --dark2:#0c0c10;
-    --glass:rgba(255,255,255,.075);
-    --border:rgba(255,255,255,.13);
-    --text:#ffffff;
-    --muted:#a9abb3;
-    --green:#25D366;
-    --blue:#2875f5;
+ --red:#ef2028;--red2:#ff5b61;--black:#070608;--panel:#171114;
+ --text:#fff;--muted:#c9c4c7;--green:#25d366;--blue:#2875f5;
+ --gold:#ffc928;--line:rgba(255,255,255,.14);
 }
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    -webkit-tap-highlight-color:transparent;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
 body{
-    min-height:100vh;
-    font-family:'Inter',Arial,sans-serif;
-    color:var(--text);
-    background:
-        radial-gradient(circle at 50% 0%,rgba(239,32,40,.20),transparent 35%),
-        radial-gradient(circle at 10% 80%,rgba(239,32,40,.10),transparent 30%),
-        linear-gradient(135deg,#030304,#0a090b 45%,#160506);
-    background-attachment:fixed;
-    overflow-x:hidden;
+ min-height:100vh;color:var(--text);font-family:Inter,"Noto Sans Devanagari",Arial,sans-serif;
+ background:
+ radial-gradient(circle at 50% 0%,rgba(239,32,40,.22),transparent 32%),
+ radial-gradient(circle at 0 70%,rgba(255,80,90,.10),transparent 28%),
+ linear-gradient(145deg,#030304 0%,#10090c 48%,#21090c 100%);
+ background-attachment:fixed;overflow-x:hidden;
 }
-
-/* Animated background glow */
-
-body::before{
-    content:"";
-    position:fixed;
-    width:520px;
-    height:520px;
-    border-radius:50%;
-    background:rgba(239,32,40,.10);
-    filter:blur(100px);
-    top:-180px;
-    left:50%;
-    transform:translateX(-50%);
-    pointer-events:none;
-    animation:glowMove 7s ease-in-out infinite alternate;
+body:before{
+ content:"";position:fixed;inset:-20%;pointer-events:none;z-index:-3;
+ background:radial-gradient(circle,rgba(255,255,255,.06) 0 2px,transparent 3px);
+ background-size:85px 85px;animation:bgDrift 22s linear infinite;
 }
-
-body::after{
-    content:"";
-    position:fixed;
-    width:320px;
-    height:320px;
-    border-radius:50%;
-    background:rgba(255,70,70,.07);
-    filter:blur(100px);
-    right:-150px;
-    bottom:-100px;
-    pointer-events:none;
-}
-
-@keyframes glowMove{
-    from{opacity:.45;transform:translateX(-50%) scale(.9)}
-    to{opacity:.85;transform:translateX(-50%) scale(1.15)}
-}
-
-/* Floating particles */
-
-.container{
-    width:100%;
-    max-width:720px;
-    margin:auto;
-    padding:35px 18px 80px;
-    position:relative;
-    z-index:2;
-}
-
+@keyframes bgDrift{to{transform:translate3d(85px,85px,0)}}
+a{color:inherit}
+.container{width:min(100%,760px);margin:auto;padding:18px 12px 55px}
 .glass{
-    position:relative;
-    overflow:hidden;
-    padding:22px;
-    border-radius:32px;
-    background:linear-gradient(
-        145deg,
-        rgba(255,255,255,.105),
-        rgba(255,255,255,.035)
-    );
-    border:1px solid var(--border);
-    box-shadow:
-        0 30px 80px rgba(0,0,0,.55),
-        inset 0 1px 0 rgba(255,255,255,.10);
-    backdrop-filter:blur(24px);
-    -webkit-backdrop-filter:blur(24px);
+ position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.15);
+ border-radius:28px;background:linear-gradient(145deg,rgba(50,29,33,.88),rgba(10,10,12,.92));
+ box-shadow:0 30px 90px rgba(0,0,0,.55),inset 0 1px rgba(255,255,255,.08);
+ padding:14px;
 }
-
-/* Red glass glow */
-
-.glass::before{
-    content:"";
-    position:absolute;
-    width:300px;
-    height:300px;
-    border-radius:50%;
-    background:rgba(239,32,40,.09);
-    filter:blur(80px);
-    top:-180px;
-    left:50%;
-    transform:translateX(-50%);
-    pointer-events:none;
+.glass:before{
+ content:"";position:absolute;inset:0;pointer-events:none;
+ background:linear-gradient(120deg,rgba(255,255,255,.08),transparent 28%,transparent 70%,rgba(239,32,40,.06));
 }
-
-/* Banner */
-
 .banner{
-    position:relative;
-    width:100%;
-    max-height:240px;
-    object-fit:contain;
-    display:block;
-    margin:0 auto 20px;
-    border-radius:20px;
-    background:#080808;
-    box-shadow:
-        0 15px 45px rgba(0,0,0,.45),
-        0 0 35px rgba(239,32,40,.12);
-    animation:bannerIn .8s ease;
+ position:relative;width:100%;display:block;object-fit:cover;border-radius:21px;
+ border:1px solid rgba(255,255,255,.22);box-shadow:0 15px 35px rgba(0,0,0,.45);
+ margin-bottom:22px;
 }
-
-@keyframes bannerIn{
-    from{
-        opacity:0;
-        transform:translateY(-15px) scale(.97);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0) scale(1);
-    }
-}
-
-/* Header */
-
-.header{
-    text-align:center;
-    position:relative;
-    z-index:2;
-    padding:5px 5px 20px;
-}
-
-.header h1{
-    font-size:clamp(28px,6vw,45px);
-    font-weight:900;
-    letter-spacing:-1.5px;
-    margin:12px 0;
-    background:linear-gradient(
-        90deg,
-        #ffffff,
-        #ff5258,
-        #ffffff
-    );
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-    background-size:200%;
-    animation:titleShine 4s linear infinite;
-}
-
-@keyframes titleShine{
-    0%{background-position:0%}
-    100%{background-position:200%}
-}
-
-/* Rating */
-
+.header{text-align:center;padding:4px 8px 22px}
 .rating{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:4px;
-    padding:9px 16px;
-    margin-bottom:8px;
-    border-radius:50px;
-    background:rgba(255,255,255,.96);
-    color:#151515;
-    font-size:13px;
-    font-weight:800;
-    box-shadow:0 8px 30px rgba(0,0,0,.35);
+ display:inline-flex;align-items:center;gap:4px;padding:11px 18px;border-radius:999px;
+ background:linear-gradient(180deg,#fff,#e9e9e9);color:#222;font-weight:900;
+ box-shadow:0 8px 25px rgba(0,0,0,.3),inset 0 1px #fff;
+}
+.rating i{color:var(--gold);filter:drop-shadow(0 2px 2px #b98b00)}
+h1{
+ margin:22px 0 12px;font-size:clamp(32px,8vw,58px);font-weight:900;letter-spacing:-2px;
+ color:#fff;text-shadow:0 4px 0 #8e1117,0 10px 25px rgba(239,32,40,.35);
+}
+.subtitle{max-width:620px;margin:auto;color:#f2ecee;line-height:1.8;font-size:16px}
+.review{
+ margin:24px auto 0;display:flex;align-items:center;justify-content:center;gap:10px;
+ min-height:68px;padding:15px 22px;border-radius:19px;text-decoration:none;
+ font-weight:900;font-size:18px;color:#241c00;
+ background:linear-gradient(180deg,#fff,#e9e9e9);
+ border:1px solid rgba(255,255,255,.95);
+ box-shadow:0 10px 0 #aaa,0 18px 35px rgba(0,0,0,.45),inset 0 2px #fff;
+ transform:translateY(0);transition:.2s;position:relative;overflow:hidden;
+}
+.review:before{
+ content:"";position:absolute;inset:-50%;background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.8) 50%,transparent 58%);
+ transform:translateX(-70%);animation:shine 3.2s infinite;
+}
+.review i{color:#f4b400;font-size:25px;filter:drop-shadow(0 3px 2px #9a7000)}
+.review span{position:relative;z-index:2}
+.review:hover,.review:focus-visible{transform:translateY(4px);box-shadow:0 6px 0 #aaa,0 13px 28px rgba(0,0,0,.45)}
+.review:active{transform:translateY(9px);box-shadow:0 1px 0 #aaa,0 7px 15px rgba(0,0,0,.4)}
+@keyframes shine{0%,60%{transform:translateX(-70%)}80%,100%{transform:translateX(70%)}}
+
+.section,.services{margin-top:14px}
+.section h2,.services h2{
+ font-size:27px;margin:20px 4px 14px;font-weight:900;text-shadow:0 3px 0 #6f1015;
+}
+.cards{display:grid;gap:16px}
+.card{
+ position:relative;padding:22px;border-radius:23px;border:1px solid var(--line);
+ background:linear-gradient(145deg,rgba(255,255,255,.11),rgba(255,255,255,.035));
+ box-shadow:0 16px 35px rgba(0,0,0,.35),inset 0 1px rgba(255,255,255,.08);
+ overflow:hidden;
+}
+.card:after{
+ content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+ background:linear-gradient(#ff3038,#7d080e);box-shadow:0 0 20px rgba(239,32,40,.6);
+}
+.icon{font-size:32px;margin-bottom:7px}
+.name{font-size:21px;font-weight:900}
+.role{color:var(--muted);margin:3px 0 15px}
+.btn{
+ position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+ min-height:52px;padding:12px 17px;margin:5px 4px 0 0;border-radius:15px;text-decoration:none;
+ font-weight:900;color:#fff;border:1px solid rgba(255,255,255,.18);
+ box-shadow:0 7px 0 rgba(0,0,0,.35),0 13px 25px rgba(0,0,0,.3),inset 0 1px rgba(255,255,255,.28);
+ transform:translateY(0);transition:transform .16s,box-shadow .16s,filter .16s;
+}
+.btn:hover{filter:brightness(1.1);transform:translateY(-2px);box-shadow:0 9px 0 rgba(0,0,0,.35),0 18px 30px rgba(0,0,0,.35),0 0 20px rgba(255,255,255,.12)}
+.btn:active{transform:translateY(5px);box-shadow:0 2px 0 rgba(0,0,0,.4),0 7px 14px rgba(0,0,0,.3)}
+.btn i{font-size:19px;filter:drop-shadow(0 2px 2px rgba(0,0,0,.55))}
+.wa{background:linear-gradient(145deg,#31ed7a,#0eaa50)}
+.call{background:linear-gradient(145deg,#4d91ff,#1556d8)}
+.map{background:linear-gradient(145deg,#ff4d55,#c70d18)}
+.group{width:100%;margin-top:12px;background:linear-gradient(145deg,#16d976,#087f45)}
+.address{
+ margin-top:17px;padding:18px;border-radius:19px;background:rgba(255,255,255,.045);
+ border:1px solid rgba(255,255,255,.1);line-height:1.7;color:#eee;
 }
 
-.rating i{
-    color:#fbbc04;
-    filter:drop-shadow(0 1px 2px rgba(0,0,0,.2));
+.services h2{text-align:center;font-size:29px;margin-top:28px}
+details{
+ position:relative;margin:13px 0;border-radius:19px;overflow:hidden;
+ background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.035));
+ border:1px solid rgba(255,255,255,.14);
+ box-shadow:0 9px 0 rgba(0,0,0,.26),0 16px 30px rgba(0,0,0,.25),inset 0 1px rgba(255,255,255,.07);
+ transition:.3s;
 }
-
-.subtitle{
-    max-width:580px;
-    margin:8px auto;
-    color:#c7c8cd;
-    font-size:14px;
-    line-height:1.7;
+details[open]{box-shadow:0 7px 0 rgba(0,0,0,.26),0 22px 38px rgba(0,0,0,.32),0 0 24px rgba(239,32,40,.08)}
+summary{
+ list-style:none;cursor:pointer;display:flex;align-items:center;gap:11px;min-height:68px;
+ padding:15px 17px;font-size:17px;font-weight:900;user-select:none;
+ background:linear-gradient(135deg,rgba(239,32,40,.12),rgba(255,255,255,.03));
+ transition:.25s;
 }
-
-/* Main sections */
-
-.header + *,
-.glass > div{
-    position:relative;
-    z-index:2;
+summary::-webkit-details-marker{display:none}
+summary:before{
+ content:"▸";width:29px;height:29px;display:grid;place-items:center;border-radius:9px;
+ background:linear-gradient(145deg,#fff,#aaa);color:#111;font-size:18px;
+ box-shadow:0 4px 0 #777,0 6px 14px rgba(0,0,0,.35);transition:.3s;
 }
-
-/* Section headings */
-
-h2,h3{
-    color:#fff;
+details[open] summary:before{transform:rotate(90deg);background:linear-gradient(145deg,#ff4e56,#bd0d16);color:#fff;box-shadow:0 4px 0 #67060a}
+summary small{
+ margin-left:auto;white-space:nowrap;padding:7px 10px;border-radius:999px;font-size:11px;
+ color:#fff;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.13);
 }
+details ul{padding:4px 18px 18px 55px;animation:dropIn .35s ease}
+details li{margin:9px 0;color:#f5f1f2;line-height:1.45}
+details li::marker{color:#ff4a51}
+@keyframes dropIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+details:hover{transform:translateY(-1px)}
 
-.glass h2,
-.glass h3{
-    letter-spacing:-.3px;
+.footer{text-align:center;padding:25px 8px 5px;color:#e9e1e3;line-height:1.8}
+.footer b{color:#ff5a61;font-size:20px}
+
+.ripple{
+ position:absolute;border-radius:50%;pointer-events:none;background:rgba(255,255,255,.4);
+ transform:scale(0);animation:ripple .65s ease-out;
 }
-
-/* Contact area */
-
-.contact{
-    margin-top:10px;
-}
-
-.contact-title{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin:25px 0 14px;
-    font-size:18px;
-    font-weight:800;
-}
-
-.contact-title i{
-    color:var(--red2);
-}
-
-/* Contact cards */
-
-.card,
-.contact-card,
-.person,
-.shop-card{
-    position:relative;
-    overflow:hidden;
-    padding:22px;
-    margin:14px 0;
-    border-radius:22px;
-    background:rgba(255,255,255,.055);
-    border:1px solid rgba(255,255,255,.10);
-    box-shadow:
-        0 12px 35px rgba(0,0,0,.22),
-        inset 0 1px 0 rgba(255,255,255,.05);
-    transition:.3s ease;
-}
-
-.card:hover,
-.contact-card:hover,
-.person:hover,
-.shop-card:hover{
-    transform:translateY(-3px);
-    border-color:rgba(239,32,40,.38);
-    box-shadow:
-        0 18px 45px rgba(0,0,0,.35),
-        0 0 25px rgba(239,32,40,.08);
-}
-
-/* Red line on cards */
-
-.card::before,
-.contact-card::before,
-.person::before,
-.shop-card::before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:0;
-    bottom:0;
-    width:3px;
-    background:linear-gradient(
-        180deg,
-        transparent,
-        var(--red),
-        transparent
-    );
-}
-
-/* Buttons */
-
-button,
-.btn,
-a.button{
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease,
-        filter .25s ease;
-}
-
-button:hover,
-.btn:hover,
-a.button:hover{
-    transform:translateY(-2px);
-    filter:brightness(1.08);
-}
-
-button:active,
-.btn:active,
-a.button:active{
-    transform:scale(.97);
-}
-
-/* WhatsApp */
-
-.whatsapp,
-.wa,
-.btn-whatsapp{
-    background:linear-gradient(135deg,#20c964,#25D366)!important;
-    color:#fff!important;
-    box-shadow:0 10px 25px rgba(37,211,102,.18);
-}
-
-/* Call */
-
-.call,
-.btn-call{
-    background:linear-gradient(135deg,#2463e9,#367cff)!important;
-    color:#fff!important;
-    box-shadow:0 10px 25px rgba(40,117,245,.18);
-}
-
-/* Review */
-
-.review,
-.google-review,
-.btn-review{
-    background:#fff!important;
-    color:#2875f5!important;
-    box-shadow:0 12px 30px rgba(255,255,255,.08);
-}
-
-/* Location */
-
-.map,
-.location,
-.btn-map{
-    background:linear-gradient(135deg,#e9232c,#ff454d)!important;
-    color:#fff!important;
-}
-
-/* Group */
-
-.group,
-.join-group,
-.btn-group{
-    background:linear-gradient(135deg,#075e54,#128c7e)!important;
-    color:#fff!important;
-}
-
-/* Services */
-
-.services{
-    margin-top:30px;
-}
-
-.services h2{
-    text-align:left;
-    margin-bottom:15px;
-    font-size:22px;
-}
-
-.service,
-.service-box,
-.services > div{
-    border:1px solid rgba(255,255,255,.09);
-    background:rgba(255,255,255,.045);
-    border-radius:18px;
-    margin:10px 0;
-    padding:16px 18px;
-    transition:.3s ease;
-}
-
-.service:hover,
-.service-box:hover,
-.services > div:hover{
-    background:rgba(239,32,40,.07);
-    border-color:rgba(239,32,40,.25);
-}
-
-/* Links */
-
-a{
-    color:inherit;
-    text-decoration:none;
-}
-
-
-/* =========================================================
-   SEEMA DIGITAL | PREMIUM FLOATING ACTIONS
-   ========================================================= */
+@keyframes ripple{to{transform:scale(4);opacity:0}}
 
 .floating-actions{
-    position:fixed !important;
-    right:12px !important;
-    top:50% !important;
-    bottom:auto !important;
-    left:auto !important;
-    transform:translateY(-50%) !important;
-    z-index:2147483647 !important;
-
-    display:flex !important;
-    flex-direction:column !important;
-    align-items:center !important;
-    gap:9px !important;
-
-    pointer-events:none !important;
-    touch-action:none !important;
-
-    transition:
-        opacity .25s ease,
-        transform .25s ease !important;
+ position:fixed;right:12px;top:50%;transform:translateY(-50%);
+ z-index:99999;display:flex;flex-direction:column;gap:12px;touch-action:none;
+ transition:opacity .25s,transform .25s,filter .25s;
 }
-
-.floating-actions.is-hidden{
-    opacity:0 !important;
-    pointer-events:none !important;
-    transform:translateY(-50%) translateX(90px) scale(.85) !important;
+.floating-actions.is-hidden{opacity:0;pointer-events:none;transform:translate(120px,-50%)}
+.float-btn{
+ width:58px;height:58px;border-radius:18px;display:grid;place-items:center;
+ position:relative;text-decoration:none;color:#fff;border:1px solid rgba(255,255,255,.3);
+ box-shadow:0 9px 0 rgba(0,0,0,.4),0 15px 28px rgba(0,0,0,.4),inset 0 2px rgba(255,255,255,.35);
+ transition:.18s;cursor:grab;
 }
-
-.floating-actions .float-btn{
-    position:relative !important;
-
-    width:44px !important;
-    height:44px !important;
-    min-width:44px !important;
-    min-height:44px !important;
-
-    padding:0 !important;
-    margin:0 !important;
-
-    display:flex !important;
-    align-items:center !important;
-    justify-content:center !important;
-
-    border-radius:50% !important;
-    border:1px solid rgba(255,255,255,.30) !important;
-
-    color:#fff !important;
-    text-decoration:none !important;
-
-    pointer-events:auto !important;
-    touch-action:none !important;
-    user-select:none !important;
-    -webkit-user-select:none !important;
-
-    box-shadow:
-        0 8px 24px rgba(0,0,0,.58),
-        inset 0 1px 0 rgba(255,255,255,.30) !important;
-
-    transition:
-        transform .22s ease,
-        box-shadow .22s ease,
-        filter .22s ease !important;
-
-    animation:seemaFloatPulse 2.4s ease-in-out infinite !important;
+.float-btn:active{cursor:grabbing}
+.float-icon{
+ width:100%;height:100%;display:grid;place-items:center;font-size:26px;
+ filter:drop-shadow(0 3px 2px rgba(0,0,0,.65))
 }
-
-.floating-actions .float-btn:active{
-    transform:scale(.92) !important;
+.float-label{
+ position:absolute;right:68px;white-space:nowrap;padding:8px 11px;border-radius:10px;
+ background:rgba(6,6,8,.94);border:1px solid rgba(255,255,255,.16);
+ font-size:11px;font-weight:900;opacity:0;transform:translateX(7px);
+ pointer-events:none;transition:.2s;box-shadow:0 8px 20px rgba(0,0,0,.45);
 }
-
-.floating-actions .float-btn.dragging{
-    transform:scale(1.08) !important;
-    cursor:grabbing !important;
+.float-btn:hover .float-label,.float-btn:focus-visible .float-label{opacity:1;transform:none}
+.float-btn:hover{transform:translateY(-3px) scale(1.05)}
+.join-group{background:linear-gradient(145deg,#22e17b,#087b49)}
+.whatsapp-admin{background:linear-gradient(145deg,#31ee80,#079b55)}
+.call-admin{background:linear-gradient(145deg,#4d91ff,#1655d8)}
+.location{background:linear-gradient(145deg,#ff535a,#cf1019)}
+.float-btn:before{
+ content:"";position:absolute;inset:-2px;border-radius:20px;border:2px solid rgba(255,255,255,.18);
+ animation:floatRing 2.2s infinite;pointer-events:none;
 }
-
-.floating-actions .float-icon{
-    font-size:19px !important;
-    line-height:1 !important;
-    position:relative;
-    z-index:2;
-}
-
-.floating-actions .float-label{
-    position:absolute !important;
-    right:52px !important;
-    top:50% !important;
-
-    transform:translateY(-50%) translateX(8px) !important;
-
-    white-space:nowrap !important;
-    padding:6px 9px !important;
-    border-radius:8px !important;
-
-    background:rgba(4,4,7,.95) !important;
-    border:1px solid rgba(255,255,255,.16) !important;
-    color:#fff !important;
-
-    font-size:10px !important;
-    font-weight:800 !important;
-
-    opacity:0 !important;
-    pointer-events:none !important;
-
-    transition:.22s ease !important;
-    box-shadow:0 7px 20px rgba(0,0,0,.48) !important;
-}
-
-.floating-actions .float-btn:hover .float-label,
-.floating-actions .float-btn:focus-visible .float-label{
-    opacity:1 !important;
-    transform:translateY(-50%) translateX(0) !important;
-}
-
-.floating-actions .float-btn:hover{
-    transform:scale(1.10) !important;
-    filter:brightness(1.10) !important;
-    box-shadow:
-        0 12px 32px rgba(0,0,0,.72),
-        0 0 20px rgba(255,255,255,.16) !important;
-    animation-play-state:paused !important;
-}
-
-.floating-actions .join-group{
-    background:linear-gradient(135deg,#075e54,#128c7e) !important;
-}
-
-.floating-actions .whatsapp-admin{
-    background:linear-gradient(135deg,#16a34a,#25D366) !important;
-}
-
-.floating-actions .call-admin{
-    background:linear-gradient(135deg,#1557df,#347cff) !important;
-}
-
-.floating-actions .location{
-    background:linear-gradient(135deg,#e9232c,#ff5258) !important;
-}
-
-@keyframes seemaFloatPulse{
-    0%,100%{
-        box-shadow:
-            0 8px 24px rgba(0,0,0,.58),
-            0 0 0 0 rgba(255,255,255,.18);
-    }
-    50%{
-        box-shadow:
-            0 8px 24px rgba(0,0,0,.58),
-            0 0 0 7px rgba(255,255,255,0);
-    }
-}
-
-/* Mobile */
+.float-btn:nth-child(2):before{animation-delay:.35s}
+.float-btn:nth-child(3):before{animation-delay:.7s}
+.float-btn:nth-child(4):before{animation-delay:1.05s}
+@keyframes floatRing{0%,100%{opacity:0;transform:scale(1)}45%{opacity:.5}75%{opacity:0;transform:scale(1.22)}}
 @media(max-width:600px){
-    .floating-actions{
-        right:8px !important;
-        gap:7px !important;
-    }
-
-    .floating-actions .float-btn{
-        width:40px !important;
-        height:40px !important;
-        min-width:40px !important;
-        min-height:40px !important;
-    }
-
-    .floating-actions .float-icon{
-        font-size:17px !important;
-    }
-
-    .floating-actions .float-label{
-        right:48px !important;
-        font-size:9px !important;
-        padding:5px 8px !important;
-    }
+ .container{padding:8px 7px 45px}.glass{border-radius:22px;padding:10px}.banner{border-radius:16px}
+ h1{font-size:35px;letter-spacing:-1px}.subtitle{font-size:14px}
+ .review{min-height:62px;font-size:16px;padding:13px 14px}
+ .btn{width:100%;margin-right:0}.card{padding:18px}
+ summary{font-size:15px;min-height:62px;padding:13px}
+ summary small{font-size:10px;padding:6px 7px}
+ details ul{padding-left:43px}
+ .floating-actions{right:9px;gap:9px}
+ .float-btn{width:49px;height:49px;border-radius:15px}
+ .float-icon{font-size:21px}.float-label{right:58px;font-size:10px;padding:7px 9px}
 }
-
-/* Small phones */
-@media(max-width:380px){
-    .floating-actions{
-        right:6px !important;
-        gap:6px !important;
-    }
-
-    .floating-actions .float-btn{
-        width:37px !important;
-        height:37px !important;
-        min-width:37px !important;
-        min-height:37px !important;
-    }
-
-    .floating-actions .float-icon{
-        font-size:16px !important;
-    }
-
-    .floating-actions .float-label{
-        right:44px !important;
-        font-size:8px !important;
-    }
-}
-
-/* Accessibility */
 @media(prefers-reduced-motion:reduce){
-    *,
-    *::before,
-    *::after{
-        animation:none !important;
-        transition:none !important;
-    }
-}
-
-/* Footer */
-
-footer{
-    color:#858792;
-    font-size:12px;
-    text-align:center;
-    padding:30px 10px 10px;
-}
-
-/* Scrollbar */
-
-::-webkit-scrollbar{
-    width:7px;
-}
-
-::-webkit-scrollbar-track{
-    background:#050507;
-}
-
-::-webkit-scrollbar-thumb{
-    background:#33343a;
-    border-radius:20px;
-}
-
-::-webkit-scrollbar-thumb:hover{
-    background:var(--red);
-}
-
-/* Mobile */
-
-@media(max-width:600px){
-
-    .container{
-        padding:12px 10px 70px;
-    }
-
-    .glass{
-        padding:14px;
-        border-radius:24px;
-    }
-
-    .banner{
-        max-height:180px;
-        border-radius:16px;
-    }
-
-    .header h1{
-        font-size:28px;
-        letter-spacing:-1px;
-    }
-
-    .subtitle{
-        font-size:13px;
-    }
-
-    .card,
-    .contact-card,
-    .person,
-    .shop-card{
-        padding:18px;
-        border-radius:19px;
-    }
-
-    .float{
-        right:12px;
-        bottom:14px;
-        gap:8px;
-    }
-
-    .float a{
-        width:46px;
-        height:46px;
-        font-size:18px;
-    }
-
-    .float a::after{
-        right:56px;
-    }
-}
-
-/* Extra small phones */
-
-@media(max-width:380px){
-
-    .glass{
-        padding:11px;
-    }
-
-    .header h1{
-        font-size:25px;
-    }
-
-    .rating{
-        font-size:11px;
-        padding:8px 12px;
-    }
-
-    .float a{
-        width:43px;
-        height:43px;
-    }
-}
-
-/* Smooth entrance */
-
-.container{
-    animation:pageIn .8s ease both;
-}
-
-@keyframes pageIn{
-    from{
-        opacity:0;
-        transform:translateY(15px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-/* Accessibility */
-
-@media(prefers-reduced-motion:reduce){
-    *,
-    *::before,
-    *::after{
-        animation:none!important;
-        transition:none!important;
-/* =================================================
-   SEEMA DIGITAL - PREMIUM FLOATING ACTIONS
-   ================================================= */
-
-.floating-actions{
-    position:fixed !important;
-
-    right:14px !important;
-    left:auto !important;
-
-    top:50% !important;
-    bottom:auto !important;
-
-    transform:translateY(-50%) !important;
-
-    z-index:2147483647 !important;
-
-    display:flex !important;
-    flex-direction:column !important;
-    align-items:center !important;
-
-    gap:10px !important;
-
-    pointer-events:none !important;
-}
-
-
-/* ===============================
-   FLOATING BUTTON
-   =============================== */
-
-.floating-actions .float-btn{
-    position:relative !important;
-
-    width:44px !important;
-    height:44px !important;
-    min-width:44px !important;
-    min-height:44px !important;
-
-    padding:0 !important;
-    margin:0 !important;
-
-    display:flex !important;
-    align-items:center !important;
-    justify-content:center !important;
-
-    border-radius:50% !important;
-
-    color:#fff !important;
-    text-decoration:none !important;
-
-    pointer-events:auto !important;
-
-    border:1px solid rgba(255,255,255,.28) !important;
-
-    box-shadow:
-        0 8px 22px rgba(0,0,0,.55),
-        inset 0 1px 0 rgba(255,255,255,.30) !important;
-
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease !important;
-
-    animation:seemaFloatPulse 2.5s ease-in-out infinite !important;
-}
-
-
-/* ===============================
-   ICON
-   =============================== */
-
-.floating-actions .float-icon{
-    font-size:19px !important;
-    line-height:1 !important;
-    position:relative;
-    z-index:2;
-}
-
-
-/* ===============================
-   LABEL
-   =============================== */
-
-.floating-actions .float-label{
-    position:absolute !important;
-
-    right:52px !important;
-    left:auto !important;
-
-    top:50% !important;
-
-    transform:
-        translateY(-50%)
-        translateX(8px) !important;
-
-    white-space:nowrap !important;
-
-    padding:6px 9px !important;
-
-    border-radius:8px !important;
-
-    background:rgba(5,5,8,.94) !important;
-
-    border:1px solid rgba(255,255,255,.15) !important;
-
-    color:#fff !important;
-
-    font-size:10px !important;
-    font-weight:700 !important;
-
-    opacity:0 !important;
-
-    pointer-events:none !important;
-
-    transition:.25s ease !important;
-
-    box-shadow:0 6px 18px rgba(0,0,0,.45) !important;
-}
-
-
-/* SHOW LABEL */
-
-.floating-actions .float-btn:hover .float-label{
-    opacity:1 !important;
-
-    transform:
-        translateY(-50%)
-        translateX(0) !important;
-}
-
-
-/* ===============================
-   HOVER
-   =============================== */
-
-.floating-actions .float-btn:hover{
-
-    transform:scale(1.12) !important;
-
-    box-shadow:
-        0 12px 30px rgba(0,0,0,.70),
-        0 0 18px rgba(255,255,255,.20) !important;
-
-    animation-play-state:paused !important;
-}
-
-
-/* ===============================
-   COLORS
-   =============================== */
-
-.floating-actions .join-group{
-    background:
-        linear-gradient(
-            135deg,
-            #075e54,
-            #128c7e
-        ) !important;
-}
-
-
-.floating-actions .whatsapp-admin{
-    background:
-        linear-gradient(
-            135deg,
-            #16a34a,
-            #25D366
-        ) !important;
-}
-
-
-.floating-actions .call-admin{
-    background:
-        linear-gradient(
-            135deg,
-            #1557df,
-            #347cff
-        ) !important;
-}
-
-
-.floating-actions .location{
-    background:
-        linear-gradient(
-            135deg,
-            #e9232c,
-            #ff5258
-        ) !important;
-}
-
-
-/* ===============================
-   PULSE ANIMATION
-   =============================== */
-
-@keyframes seemaFloatPulse{
-
-    0%,100%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.06);
-    }
-}
-
-
-/* ===============================
-   MOBILE
-   =============================== */
-
-@media(max-width:600px){
-
-    .floating-actions{
-
-        right:8px !important;
-        left:auto !important;
-
-        top:50% !important;
-        bottom:auto !important;
-
-        transform:translateY(-50%) !important;
-
-        gap:8px !important;
-    }
-
-
-    .floating-actions .float-btn{
-
-        width:40px !important;
-        height:40px !important;
-
-        min-width:40px !important;
-        min-height:40px !important;
-
-        font-size:17px !important;
-    }
-
-
-    .floating-actions .float-icon{
-        font-size:17px !important;
-    }
-
-
-    .floating-actions .float-label{
-        right:48px !important;
-        font-size:9px !important;
-    }
-}
-
-
-/* ===============================
-   REDUCED MOTION
-   =============================== */
-
-@media(prefers-reduced-motion:reduce)
-
-    .floating-actions .float-btn{
-        animation:none !important;
-        transition:none !important;
-    }
-}
-
-/* Floating attention */
-.floating-actions.attention .float-btn{
-    animation:
-        seemaFloatPulse 1.1s ease-in-out 2,
-        seemaFloatAttention .55s ease-in-out 2 !important;
-}
-@keyframes seemaFloatAttention{
-    50%{ transform:scale(1.13); }
+ *,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}
 }
 </style>
-
 </head>
 
 <body>
-
 <div class="container">
-
 <div class="glass">
 
-<img src="seemadigitalbanner.png" class="banner">
+<img src="seemadigitalbanner.png" class="banner" alt="Seema Digital">
 
-<div class="header">
-
+<header class="header">
 <div class="rating">
-
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
-
-&nbsp; Google Verified
-
+<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+<span>Google Verified</span>
 </div>
 
 <h1>SEEMA DIGITAL</h1>
 
 <div class="subtitle">
-
-🙏 तुमचा एक Review आमच्यासाठी खूप महत्त्वाचा आहे.
-
+🙏 तुमचा एक Review आमच्यासाठी खूप महत्त्वाचा आहे.<br>
 जर आमची सेवा आवडली असेल तर कृपया Google वर Review द्या.
-
 </div>
 
-<a class="review"
-
-id="reviewBtn"
-
-target="_blank"
-
+<a class="review" id="reviewBtn" target="_blank"
 href="https://g.page/r/CXrOb5EcYE5UEAI/review?utm_source=gbp&utm_medium=reviews&utm_campaign=qr">
-
 <i class="fa-solid fa-star"></i>
-
-⭐⭐⭐⭐⭐ Google Review
-
+<span>CLICK HERE TO REVIEW</span>
+<i class="fa-solid fa-arrow-right"></i>
 </a>
+</header>
 
-</div>
-
-<div class="section">
-
+<section class="section">
 <h2>📞 Contact</h2>
-
 <div class="cards">
 
 <div class="card">
-
 <div class="icon">👨‍💼</div>
-
 <div class="name">Mubin Shaikh</div>
-
-<div class="role">Main Admin</div>
-
-<a class="btn wa"
-
-target="_blank"
-
-href="https://wa.me/919767610061">
-
-💬 WhatsApp
-
+<div class="role">Main Admin • 9767610061</div>
+<a class="btn wa" target="_blank" href="https://wa.me/919767610061">
+<i class="fa-brands fa-whatsapp"></i> WhatsApp
 </a>
-
-<a class="btn call"
-
-href="tel:+919767610061">
-
-📞 Call Now
-
+<a class="btn call" href="tel:+919767610061">
+<i class="fa-solid fa-phone"></i> Call Now
 </a>
-
 </div>
 
 <div class="card">
-
 <div class="icon">🏪</div>
-
 <div class="name">Seema Digital</div>
-
-<div class="role">Shop Contact</div>
-
-<a class="btn wa"
-
-target="_blank"
-
-href="https://wa.me/919561869422">
-
-💬 WhatsApp
-
+<div class="role">Shop Contact • 9561869422</div>
+<a class="btn wa" target="_blank" href="https://wa.me/919561869422">
+<i class="fa-brands fa-whatsapp"></i> WhatsApp
 </a>
-
-<a class="btn call"
-
-href="tel:+919561869422">
-
-📞 Call Now
-
+<a class="btn call" href="tel:+919561869422">
+<i class="fa-solid fa-phone"></i> Call Now
 </a>
-
 </div>
 
 </div>
 
 <div class="address">
-
 📍 पंचायत समिती क्वार्टर जवळ<br>
-
 नमोकार सुपर मार्ट समोर<br>
+बस स्टॅण्ड रोड, कन्नड, जि. औरंगाबाद – 431103
 
-बस स्टॅण्ड रोड, कन्नड
-
-<br><br>
-
-<a class="btn map"
-
-target="_blank"
-
-href="https://maps.google.com/?q=Seema+Digital+Kannad">
-
-🗺 Open Google Maps
-
+<a class="btn map" target="_blank"
+href="https://www.google.com/maps/search/?api=1&query=SEEMA+DIGITAL+Kannad+Aurangabad">
+<i class="fa-solid fa-location-dot"></i> Open Google Maps
 </a>
-
 </div>
 
-<a class="btn group"
-
-target="_blank"
-
+<a class="btn group" target="_blank"
 href="https://chat.whatsapp.com/CFzoN2GLvGVAsxUBkMVuXj">
-
-💚 Join WhatsApp Group
-
+<i class="fa-brands fa-whatsapp"></i> Join WhatsApp Group
 </a>
+</section>
 
-</div>
-
-<div class="services">
-
-<h2 align="center">
-
-🎯 उपलब्ध सेवा
-
-</h2>
+<section class="services">
+<h2>🎯 उपलब्ध सेवा</h2>
 
 <details open>
-
-<summary>
-
-🖨 Printing Services
-
-<small>8 Services</small>
-
-</summary>
-
+<summary>🖨️ Printing Services <small>8 Services</small></summary>
 <ul>
-
-<li>Digital Banner</li>
-
-<li>Bill Book</li>
-
-<li>Visiting Card</li>
-
-<li>Labels & Stickers</li>
-
-<li>Photo Printing</li>
-
-<li>Document Printing</li>
-
-<li>Wedding Card</li>
-
-<li>Offset Printing</li>
-
+<li>Digital Banner</li><li>Bill Book</li><li>Visiting Card</li><li>Labels & Stickers</li>
+<li>Photo Printing</li><li>Document Printing</li><li>Wedding Card</li><li>Offset Printing</li>
 </ul>
-
 </details>
 
 <details>
-
-<summary>
-
-🏦 Banking Services
-
-<small>8 Services</small>
-
-</summary>
-
+<summary>🏦 Banking Services <small>8 Services</small></summary>
 <ul>
-
-<li>AEPS</li>
-
-<li>Mini ATM</li>
-
-<li>Money Transfer</li>
-
-<li>Credit Card Cash</li>
-
-<li>Bill Payment</li>
-
-<li>HDFC Account</li>
-
-<li>Airtel Account</li>
-
-<li>Loan EMI Payment</li>
-
+<li>AEPS</li><li>Mini ATM</li><li>Money Transfer</li><li>Credit Card Cash</li>
+<li>Bill Payment</li><li>HDFC Account</li><li>Airtel Account</li><li>Loan EMI Payment</li>
 </ul>
-
 </details>
 
 <details>
-
-<summary>
-
-💳 PAN Card Services
-
-<small>6 Services</small>
-
-</summary>
-
+<summary>💳 PAN Card Services <small>6 Services</small></summary>
 <ul>
-
-<li>New PAN</li>
-
-<li>PAN Correction</li>
-
-<li>Original PAN</li>
-
-<li>Lost PAN Search</li>
-
-<li>Aadhaar Link</li>
-
-<li>Difficult Correction</li>
-
+<li>New PAN</li><li>PAN Correction</li><li>Original PAN</li><li>Lost PAN Search</li>
+<li>Aadhaar Link</li><li>Difficult Correction</li>
 </ul>
-
 </details>
 
 <details>
-
-<summary>
-
-🪪 PVC Smart Cards
-
-<small>7 Services</small>
-
-</summary>
-
+<summary>🪪 PVC Smart Cards <small>7 Services</small></summary>
 <ul>
-
-<li>Aadhaar PVC</li>
-
-<li>Ayushman Card</li>
-
-<li>ABHA Card</li>
-
-<li>E-Shram Card</li>
-
-<li>Disability Card</li>
-
-<li>Voter Card</li>
-
-<li>ID Card</li>
-
+<li>Aadhaar PVC</li><li>Ayushman Card</li><li>ABHA Card</li><li>E-Shram Card</li>
+<li>Disability Card</li><li>Voter Card</li><li>ID Card</li>
 </ul>
-
 </details>
 
 <details>
-
-<summary>
-
-🌐 Online Services
-
-<small>22+ Services</small>
-
-</summary>
-
+<summary>🌐 Online Services <small>22+ Services</small></summary>
 <ul>
-
-<li>Shop Act</li>
-
-<li>Udyam</li>
-
-<li>FSSAI</li>
-
-<li>Police Verification</li>
-
-<li>Scholarship</li>
-
-<li>PF</li>
-
-<li>Driving Licence PVC</li>
-
-<li>Vehicle Insurance</li>
-
-<li>All Online Forms</li>
-
-<li>...And Many More</li>
-
+<li>Shop Act</li><li>Udyam</li><li>FSSAI</li><li>Police Verification</li>
+<li>Scholarship</li><li>PF</li><li>Driving Licence PVC</li><li>Vehicle Insurance</li>
+<li>RTO / Parivahan Tax</li><li>7/12 & 8A</li><li>Construction Worker Forms</li><li>All Online Forms</li>
+<li>And Many More</li>
 </ul>
-
 </details>
+</section>
+
+<footer class="footer">
+✨ <b>SEEMA DIGITAL</b> ✨<br>
+📞 9767610061<br>
+❤️ Thank You For Supporting Local Business<br>
+© <span id="year"></span> Seema Digital
+</footer>
+
+</div>
+</div>
+
+<!-- FLOATING QUICK ACTIONS -->
+<div class="floating-actions" id="floatingActions" aria-label="Quick actions">
+
+<a href="https://chat.whatsapp.com/CFzoN2GLvGVAsxUBkMVuXj" class="float-btn join-group"
+target="_blank" aria-label="Join Group">
+<span class="float-icon"><i class="fa-solid fa-user-plus"></i></span>
+<span class="float-label">Join Group</span>
+</a>
+
+<a href="https://wa.me/919767610061" class="float-btn whatsapp-admin"
+target="_blank" aria-label="WhatsApp Admin">
+<span class="float-icon"><i class="fa-brands fa-whatsapp"></i></span>
+<span class="float-label">WhatsApp Admin</span>
+</a>
+
+<a href="tel:+919767610061" class="float-btn call-admin" aria-label="Call Admin">
+<span class="float-icon"><i class="fa-solid fa-phone"></i></span>
+<span class="float-label">Call Admin</span>
+</a>
+
+<a href="https://www.google.com/maps/search/?api=1&query=SEEMA+DIGITAL+Kannad+Aurangabad"
+class="float-btn location" target="_blank" aria-label="Location">
+<span class="float-icon"><i class="fa-solid fa-location-dot"></i></span>
+<span class="float-label">Location</span>
+</a>
 
 </div>
 
-<div class="footer">
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
 
-✨ <b>SEEMA DIGITAL</b> ✨
-
-<br>
-
-📞 9767610061
-
-<br>
-
-❤️ Thank You For Supporting Local Business
-
-</div>
-
-</div>
-
-    <script>
-
-// ========= Smooth Card Animation =========
-
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.animate([
-{opacity:0,transform:"translateY(40px)"},
-{opacity:1,transform:"translateY(0px)"}
-],{
-duration:700,
-fill:"forwards"
-});
-}
-});
-});
-
-document.querySelectorAll(".card,details,.address,.review,.group")
-.forEach(el=>observer.observe(el));
-
-
-// ========= Floating Background Particles =========
-
-for(let i=0;i<25;i++){
-
-let p=document.createElement("div");
-
-p.style.position="fixed";
-
-p.style.width=Math.random()*12+6+"px";
-
-p.style.height=p.style.width;
-
-p.style.borderRadius="50%";
-
-p.style.opacity=".18";
-
-p.style.background="white";
-
-p.style.left=Math.random()*100+"vw";
-
-p.style.top=Math.random()*100+"vh";
-
-p.style.pointerEvents="none";
-
-p.style.zIndex="-1";
-
-document.body.appendChild(p);
-
-let y=Math.random()*40+20;
-
-p.animate([
-
-{transform:"translateY(0px)"},
-
-{transform:`translateY(-${y}px)`},
-
-{transform:"translateY(0px)"}
-
-],{
-
-duration:Math.random()*4000+5000,
-
-iterations:Infinity
-
-});
-
-}
-
-
-// ========= Ripple Effect =========
-
+/* Ripple on every normal clickable button */
 document.querySelectorAll(".btn,.review").forEach(btn=>{
-
-btn.style.position="relative";
-
-btn.style.overflow="hidden";
-
-btn.addEventListener("click",function(e){
-
-let ripple=document.createElement("span");
-
-let size=Math.max(this.clientWidth,this.clientHeight);
-
-ripple.style.width=size+"px";
-
-ripple.style.height=size+"px";
-
-ripple.style.position="absolute";
-
-ripple.style.borderRadius="50%";
-
-ripple.style.background="rgba(255,255,255,.45)";
-
-ripple.style.left=(e.offsetX-size/2)+"px";
-
-ripple.style.top=(e.offsetY-size/2)+"px";
-
-ripple.style.transform="scale(0)";
-
-ripple.style.transition=".6s";
-
-this.appendChild(ripple);
-
-setTimeout(()=>{
-
-ripple.style.transform="scale(3)";
-
-ripple.style.opacity="0";
-
-},10);
-
-setTimeout(()=>ripple.remove(),600);
-
+ btn.addEventListener("click",e=>{
+  const r=document.createElement("span");
+  r.className="ripple";
+  const rect=btn.getBoundingClientRect();
+  const size=Math.max(rect.width,rect.height);
+  r.style.width=r.style.height=size+"px";
+  r.style.left=(e.clientX-rect.left-size/2)+"px";
+  r.style.top=(e.clientY-rect.top-size/2)+"px";
+  btn.appendChild(r);
+  setTimeout(()=>r.remove(),650);
+ });
 });
 
-});
-
-
-// ========= Button Hover Glow =========
-
-document.querySelectorAll(".btn,.review").forEach(b=>{
-
-b.addEventListener("mouseenter",()=>{
-
-b.style.boxShadow="0 0 35px rgba(255,255,255,.45)";
-
-});
-
-b.addEventListener("mouseleave",()=>{
-
-b.style.boxShadow="none";
-
-});
-
-});
-
-
-// ========= Google Review Click =========
-
+/* Google review vibration */
 document.getElementById("reviewBtn").addEventListener("click",()=>{
-
-if(navigator.vibrate){
-
-navigator.vibrate([120,60,120]);
-
-}
-
+ if(navigator.vibrate) navigator.vibrate([90,40,90]);
 });
 
-
-// ========= Floating Buttons Pulse =========
-
-document.querySelectorAll(".float a").forEach(btn=>{
-
-btn.animate([
-
-{transform:"scale(1)"},
-
-{transform:"scale(1.12)"},
-
-{transform:"scale(1)"}
-
-],{
-
-duration:1800,
-
-iterations:Infinity
-
-});
-
-});
-
-
-// ========= Title Animation =========
-
-const titles=[
-"⭐ Google Review",
-"✨ Seema Digital",
-"💚 Thank You",
-"📍 Kannad"
-];
-
-let t=0;
-
-setInterval(()=>{
-
-document.title=titles[t];
-
-t++;
-
-if(t>=titles.length)t=0;
-
-},2500);
-
-
-// ========= Scroll To Top =========
-
-let topBtn=document.createElement("button");
-
-topBtn.innerHTML="⬆";
-
-topBtn.style.position="fixed";
-
-topBtn.style.left="18px";
-
-topBtn.style.bottom="18px";
-
-topBtn.style.width="55px";
-
-topBtn.style.height="55px";
-
-topBtn.style.border="none";
-
-topBtn.style.borderRadius="50%";
-
-topBtn.style.background="#ffffff";
-
-topBtn.style.color="#111";
-
-topBtn.style.fontSize="22px";
-
-topBtn.style.cursor="pointer";
-
-topBtn.style.display="none";
-
-topBtn.style.boxShadow="0 10px 25px rgba(0,0,0,.35)";
-
-document.body.appendChild(topBtn);
-
-window.addEventListener("scroll",()=>{
-
-topBtn.style.display=window.scrollY>300?"block":"none";
-
-});
-
-topBtn.onclick=()=>{
-
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
-});
-
-};
-
-
-// ========= Footer Year =========
-
-let footer=document.querySelector(".footer");
-
-footer.innerHTML+=
-
-"<br><br>© "+new Date().getFullYear()+" Seema Digital";
-
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  /* MAIN CLICKABLE BUTTONS */
-  document.querySelectorAll(".glass a, .glass button").forEach(function(btn){
-
-    /* Floating buttons ko main button styling se alag rakho */
-    if (getComputedStyle(btn).position === "fixed") return;
-
-    btn.classList.add("premium-click");
-
-    /* Ripple effect */
-    btn.addEventListener("click", function(e){
-      const ripple = document.createElement("span");
-      ripple.className = "click-ripple";
-
-      const rect = btn.getBoundingClientRect();
-      ripple.style.left = (e.clientX - rect.left) + "px";
-      ripple.style.top = (e.clientY - rect.top) + "px";
-
-      btn.appendChild(ripple);
-
-      setTimeout(() => ripple.remove(), 650);
-    });
-  });
-
-  /* FLOATING BUTTONS */
-  document.querySelectorAll("a").forEach(function(btn){
-
-    const style = getComputedStyle(btn);
-
-    if(style.position === "fixed"){
-
-      btn.classList.add("premium-float");
-
-      const text = btn.innerText.toLowerCase();
-
-      if(text.includes("group")){
-        btn.setAttribute("data-label","Join Group");
-      }
-      else if(text.includes("admin") && text.includes("whatsapp")){
-        btn.setAttribute("data-label","WhatsApp Admin");
-      }
-      else if(text.includes("call")){
-        btn.setAttribute("data-label","Call Admin");
-      }
-      else if(text.includes("location")){
-        btn.setAttribute("data-label","Location");
-      }
-      else{
-        btn.setAttribute("data-label","Open");
-      }
-    }
-  });
-
-});
-</script>
-
-<style>
-
-/* ===============================
-   PREMIUM MAIN BUTTONS
-================================ */
-
-.premium-click{
-    position:relative !important;
-    display:flex !important;
-    align-items:center !important;
-    justify-content:center !important;
-    gap:8px !important;
-
-    width:100% !important;
-    min-height:48px !important;
-
-    margin:12px 0 !important;
-    padding:13px 18px !important;
-
-    border:none !important;
-    border-radius:14px !important;
-
-    color:#fff !important;
-    font-size:16px !important;
-    font-weight:800 !important;
-
-    text-decoration:none !important;
-
-    cursor:pointer !important;
-    overflow:hidden !important;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,.35),
-        inset 0 1px rgba(255,255,255,.25) !important;
-
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease,
-        filter .25s ease !important;
-}
-
-/* Hover */
-.premium-click:hover{
-    transform:translateY(-3px) scale(1.02) !important;
-
-    filter:brightness(1.12) !important;
-
-    box-shadow:
-        0 12px 35px rgba(0,0,0,.55),
-        0 0 18px rgba(255,255,255,.12) !important;
-}
-
-/* Click */
-.premium-click:active{
-    transform:scale(.96) !important;
-}
-
-/* Shine animation */
-.premium-click::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:-120%;
-    width:70%;
-    height:100%;
-
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.35),
-        transparent
-    );
-
-    transform:skewX(-20deg);
-
-    animation:buttonShine 3.5s infinite;
-}
-
-@keyframes buttonShine{
-    0%{left:-120%}
-    35%{left:140%}
-    100%{left:140%}
-}
-
-/* Ripple */
-.click-ripple{
-    position:absolute;
-    width:10px;
-    height:10px;
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,.7);
-
-    transform:translate(-50%,-50%);
-    animation:ripple .65s ease-out;
-
-    pointer-events:none;
-}
-
-@keyframes ripple{
-    from{
-        width:10px;
-        height:10px;
-        opacity:.8;
-    }
-
-    to{
-        width:500px;
-        height:500px;
-        opacity:0;
-    }
-}
-
-
-/* ===============================
-   FLOATING BUTTONS
-================================ */
-
-.premium-float{
-    position:fixed !important;
-
-    right:20px !important;
-
-    width:54px !important;
-    height:54px !important;
-
-    min-height:54px !important;
-
-    padding:0 !important;
-    margin:0 !important;
-
-    border-radius:50% !important;
-
-    display:flex !important;
-    align-items:center !important;
-    justify-content:center !important;
-
-    z-index:99999 !important;
-
-    color:#fff !important;
-
-    text-decoration:none !important;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,.55),
-        0 0 0 1px rgba(255,255,255,.15) !important;
-
-    animation:floatPulse 2.5s ease-in-out infinite !important;
-
-    transition:.25s ease !important;
-}
-
-/* Floating hover */
-.premium-float:hover{
-    transform:scale(1.15) !important;
-    animation-play-state:paused !important;
-}
-
-/* Label */
-.premium-float::after{
-    content:attr(data-label);
-
-    position:absolute !important;
-
-    right:68px !important;
-    top:50% !important;
-
-    transform:translateY(-50%) translateX(8px) !important;
-
-    white-space:nowrap !important;
-
-    padding:7px 11px !important;
-
-    border-radius:9px !important;
-
-    background:rgba(0,0,0,.92) !important;
-
-    color:#fff !important;
-
-    font-size:11px !important;
-    font-weight:800 !important;
-
-    opacity:0 !important;
-
-    pointer-events:none !important;
-
-    transition:.25s ease !important;
-
-    box-shadow:0 5px 20px rgba(0,0,0,.4) !important;
-}
-
-.premium-float:hover::after{
-    opacity:1 !important;
-    transform:translateY(-50%) translateX(0) !important;
-}
-
-@keyframes floatPulse{
-    0%,100%{
-        box-shadow:
-        0 8px 25px rgba(0,0,0,.55),
-        0 0 0 0 rgba(255,255,255,.25);
-    }
-
-    50%{
-        box-shadow:
-        0 8px 25px rgba(0,0,0,.55),
-        0 0 0 9px rgba(255,255,255,0);
-    }
-}
-
-
-/* MOBILE */
-@media(max-width:600px){
-
-    .premium-float{
-        right:12px !important;
-        width:48px !important;
-        height:48px !important;
-        min-height:48px !important;
-    }
-
-    .premium-float::after{
-        right:60px !important;
-    }
-
-    .premium-click{
-        min-height:46px !important;
-        font-size:15px !important;
-    }
-}
-
-</style>
-    <!-- FLOATING QUICK ACTIONS -->
-<div class="floating-actions">
-
-    <!-- JOIN WHATSAPP GROUP -->
-    <a
-        href="https://chat.whatsapp.com/CFzoN2GLvGVAsxUBkMVuXj"
-        class="float-btn join-group"
-        target="_blank"
-        aria-label="Join WhatsApp Group">
-        <span class="float-icon">💬</span>
-        <span class="float-label">Join Group</span>
-    </a>
-
-    <!-- WHATSAPP ADMIN -->
-    <a
-        href="https://wa.me/919767610061"
-        class="float-btn whatsapp-admin"
-        target="_blank"
-        aria-label="WhatsApp Admin">
-        <span class="float-icon">☏</span>
-        <span class="float-label">WhatsApp Admin</span>
-    </a>
-
-    <!-- CALL ADMIN -->
-    <a
-        href="tel:9767610061"
-        class="float-btn call-admin"
-        aria-label="Call Admin">
-        <span class="float-icon">☎</span>
-        <span class="float-label">Call Admin</span>
-    </a>
-
-    <!-- LOCATION -->
-    <a
-        href="https://www.google.com/maps/search/?api=1&query=SEEMA+DIGITAL+Kannad+Aurangabad"
-        class="float-btn location"
-        target="_blank"
-        aria-label="Open Location">
-        <span class="float-icon">📍</span>
-        <span class="float-label">Location</span>
-    </a>
-
-</div>
-    
-
-<script>
+/* Smooth reveal */
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{
+  if(entry.isIntersecting){
+   entry.target.animate(
+    [{opacity:0,transform:"translateY(22px)"},{opacity:1,transform:"translateY(0)"}],
+    {duration:550,easing:"ease-out",fill:"forwards"}
+   );
+   observer.unobserve(entry.target);
+  }
+ });
+},{threshold:.08});
+document.querySelectorAll(".card,details,.address,.review,.group").forEach(el=>observer.observe(el));
+
+/* Floating actions: drag vertically on touch/mouse */
 (function(){
-    const panel = document.querySelector('.floating-actions');
-    if(!panel) return;
+ const panel=document.getElementById("floatingActions");
+ if(!panel)return;
+ let dragging=false,startY=0,startTop=0,moved=false,hideTimer;
 
-    let dragging = false;
-    let moved = false;
-    let startY = 0;
-    let startTop = 0;
-    let hideTimer = null;
-    let scrollTimer = null;
+ const clamp=(top)=>{
+  const h=panel.offsetHeight, pad=10;
+  return Math.max(pad,Math.min(top,window.innerHeight-h-pad));
+ };
+ const place=(top)=>{
+  panel.style.top=clamp(top)+"px";
+  panel.style.bottom="auto";
+  panel.style.transform="none";
+ };
+ const show=()=>panel.classList.remove("is-hidden");
+ const hide=(ms=1300)=>{
+  clearTimeout(hideTimer);
+  hideTimer=setTimeout(()=>panel.classList.add("is-hidden"),ms);
+ };
 
-    const clampTop = (value) => {
-        const margin = 10;
-        const h = panel.getBoundingClientRect().height;
-        const max = Math.max(margin, window.innerHeight - h - margin);
-        return Math.min(Math.max(value, margin), max);
-    };
+ panel.addEventListener("pointerdown",e=>{
+  if(e.pointerType==="mouse"&&e.button!==0)return;
+  dragging=true;moved=false;startY=e.clientY;startTop=panel.getBoundingClientRect().top;
+  panel.style.transition="none";
+  try{panel.setPointerCapture(e.pointerId)}catch(_){}
+  e.preventDefault();
+ });
+ panel.addEventListener("pointermove",e=>{
+  if(!dragging)return;
+  if(Math.abs(e.clientY-startY)>5)moved=true;
+  place(startTop+e.clientY-startY);
+  e.preventDefault();
+ });
+ panel.addEventListener("pointerup",e=>{
+  if(!dragging)return;
+  dragging=false;panel.style.transition="";
+  try{panel.releasePointerCapture(e.pointerId)}catch(_){}
+  if(moved){
+   panel.dataset.dragged="1";
+   setTimeout(()=>panel.dataset.dragged="0",100);
+  }
+ });
+ panel.addEventListener("pointercancel",()=>{dragging=false;panel.style.transition=""});
 
-    const setTop = (value) => {
-        panel.style.top = clampTop(value) + 'px';
-        panel.style.bottom = 'auto';
-        panel.style.transform = 'none';
-    };
+ panel.addEventListener("click",e=>{
+  if(panel.dataset.dragged==="1"){
+   e.preventDefault();e.stopPropagation();panel.dataset.dragged="0";return;
+  }
+  hide(800);
+ },true);
 
-    function showFloat(){
-        panel.classList.remove('is-hidden');
-    }
+ /* Scroll keeps buttons available briefly, then hides to avoid covering content */
+ let scrollEnd;
+ window.addEventListener("scroll",()=>{
+  show();clearTimeout(scrollEnd);clearTimeout(hideTimer);
+  scrollEnd=setTimeout(()=>hide(1500),250);
+ },{passive:true});
 
-    function hideFloat(delay){
-        clearTimeout(hideTimer);
-        hideTimer = setTimeout(() => {
-            panel.classList.add('is-hidden');
-        }, delay || 0);
-    }
+ /* Any other click/tap hides them, next scroll brings them back */
+ document.addEventListener("pointerdown",e=>{
+  if(!panel.contains(e.target))hide(300);
+ },{passive:true});
 
-    function temporaryHide(){
-        showFloat();
-        clearTimeout(hideTimer);
-        hideTimer = setTimeout(() => {
-            panel.classList.add('is-hidden');
-        }, 1400);
-    }
+ window.addEventListener("resize",()=>{
+  if(panel.style.top)place(parseFloat(panel.style.top)||window.innerHeight/2);
+ });
 
-    panel.addEventListener('pointerdown', function(e){
-        if(e.pointerType === 'mouse' && e.button !== 0) return;
-
-        dragging = true;
-        moved = false;
-        startY = e.clientY;
-        startTop = panel.getBoundingClientRect().top;
-
-        panel.classList.add('dragging');
-        try{ panel.setPointerCapture(e.pointerId); }catch(_){}
-        e.preventDefault();
-    });
-
-    panel.addEventListener('pointermove', function(e){
-        if(!dragging) return;
-
-        const delta = e.clientY - startY;
-        if(Math.abs(delta) > 4) moved = true;
-
-        setTop(startTop + delta);
-        e.preventDefault();
-    });
-
-    panel.addEventListener('pointerup', function(e){
-        if(!dragging) return;
-        dragging = false;
-        panel.classList.remove('dragging');
-
-        try{ panel.releasePointerCapture(e.pointerId); }catch(_){}
-
-        if(moved){
-            panel.dataset.dragged = '1';
-            setTimeout(() => {
-                panel.dataset.dragged = '0';
-            }, 80);
-        }
-    });
-
-    panel.addEventListener('pointercancel', function(){
-        dragging = false;
-        panel.classList.remove('dragging');
-    });
-
-    /* Prevent accidental link activation after dragging */
-    panel.addEventListener('click', function(e){
-        if(panel.dataset.dragged === '1'){
-            e.preventDefault();
-            e.stopPropagation();
-            panel.dataset.dragged = '0';
-            return;
-        }
-
-        /* Clicking a floating button keeps it usable, then auto-hides */
-        setTimeout(() => hideFloat(650), 150);
-    }, true);
-
-    /* Click anywhere else: hide floating controls */
-    document.addEventListener('click', function(e){
-        if(panel.contains(e.target)) return;
-        temporaryHide();
-    }, true);
-
-    /* Scrolling: briefly show, then hide */
-    window.addEventListener('scroll', function(){
-        showFloat();
-        clearTimeout(scrollTimer);
-        clearTimeout(hideTimer);
-
-        scrollTimer = setTimeout(() => {
-            panel.classList.add('is-hidden');
-        }, 1100);
-    }, {passive:true});
-
-    /* Reappear when finger/mouse stops scrolling */
-    window.addEventListener('touchend', function(){
-        clearTimeout(hideTimer);
-        hideTimer = setTimeout(() => panel.classList.remove('is-hidden'), 700);
-    }, {passive:true});
-
-    /* Keep dragged position inside viewport after rotation/resize */
-    window.addEventListener('resize', function(){
-        if(panel.style.top){
-            setTop(parseFloat(panel.style.top) || window.innerHeight/2);
-        }
-    });
-
-    /* First-load attention */
-    setTimeout(() => {
-        panel.classList.add('attention');
-        setTimeout(() => panel.classList.remove('attention'), 1800);
-    }, 900);
+ /* Start at middle-right */
+ requestAnimationFrame(()=>{
+  place(window.innerHeight/2-panel.offsetHeight/2);
+ });
 })();
+
+/* Title cycle */
+const titles=["⭐ Google Review","✨ Seema Digital","💚 Join Our Group","📍 Kannad"];
+let ti=0;
+setInterval(()=>{document.title=titles[ti++%titles.length]},2800);
 </script>
-
 </body>
-
 </html>
