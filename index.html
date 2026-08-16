@@ -1536,55 +1536,7 @@ href="https://chat.whatsapp.com/CFzoN2GLvGVAsxUBkMVuXj">
 
 </div>
 
-<div class="float">
-
-    <!-- WhatsApp Group -->
-    <div class="float-item">
-        <a class="fgroup"
-           href="https://chat.whatsapp.com/CFzoN2GLvGVAsxUBkMVuXj"
-           target="_blank"
-           title="Join Group">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <span>Join Group</span>
-    </div>
-
-    <!-- WhatsApp Admin -->
-    <div class="float-item">
-        <a class="fwa"
-           href="https://wa.me/919767610061"
-           target="_blank"
-           title="WhatsApp Admin">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <span>WhatsApp Admin</span>
-    </div>
-
-    <!-- Call -->
-    <div class="float-item">
-        <a class="fcall"
-           href="tel:+919767610061"
-           title="Call Admin">
-            <i class="fa fa-phone"></i>
-        </a>
-        <span>Call Admin</span>
-    </div>
-
-    <!-- Location -->
-    <div class="float-item">
-        <a class="fmap"
-           href="https://maps.google.com/?q=Seema+Digital+Kannad"
-           target="_blank"
-           title="Location">
-            <i class="fa fa-location-dot"></i>
-        </a>
-        <span>Location</span>
-    </div>
-
-</div>
-
-<!-- PART-2 me yahin se JavaScript start hoga -->
-  <script>
+    <script>
 
 // ========= Smooth Card Animation =========
 
@@ -2131,6 +2083,299 @@ document.addEventListener("DOMContentLoaded", function () {
         min-height:46px !important;
         font-size:15px !important;
     }
+}
+
+</style>
+    <!-- FLOATING QUICK ACTIONS -->
+<div class="floating-actions">
+
+    <!-- JOIN WHATSAPP GROUP -->
+    <a
+        href="https://chat.whatsapp.com/CFzoN2GLvGVAsxUBkMVuXj"
+        class="float-btn join-group"
+        target="_blank"
+        aria-label="Join WhatsApp Group">
+        <span class="float-icon">💬</span>
+        <span class="float-label">Join Group</span>
+    </a>
+
+    <!-- WHATSAPP ADMIN -->
+    <a
+        href="https://wa.me/919767610061"
+        class="float-btn whatsapp-admin"
+        target="_blank"
+        aria-label="WhatsApp Admin">
+        <span class="float-icon">☏</span>
+        <span class="float-label">WhatsApp Admin</span>
+    </a>
+
+    <!-- CALL ADMIN -->
+    <a
+        href="tel:9767610061"
+        class="float-btn call-admin"
+        aria-label="Call Admin">
+        <span class="float-icon">☎</span>
+        <span class="float-label">Call Admin</span>
+    </a>
+
+    <!-- LOCATION -->
+    <a
+        href="https://www.google.com/maps/search/?api=1&query=SEEMA+DIGITAL+Kannad+Aurangabad"
+        class="float-btn location"
+        target="_blank"
+        aria-label="Open Location">
+        <span class="float-icon">📍</span>
+        <span class="float-label">Location</span>
+    </a>
+
+</div>
+    <style>
+
+/* =================================
+   SEEMA DIGITAL FLOATING ACTIONS
+================================= */
+
+.floating-actions{
+    position:fixed;
+
+    left:8px;
+    bottom:22px;
+
+    z-index:2147483647;
+
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+
+    gap:9px;
+
+    pointer-events:none;
+}
+
+
+/* BUTTON */
+
+.float-btn{
+    position:relative;
+
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    color:#fff;
+    text-decoration:none;
+
+    pointer-events:auto;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.55),
+        inset 0 1px rgba(255,255,255,.25);
+
+    transition:
+        transform .25s ease,
+        width .25s ease,
+        border-radius .25s ease;
+
+    animation:floatPulse 2.5s infinite;
+}
+
+
+/* ICON */
+
+.float-icon{
+    font-size:20px;
+    line-height:1;
+    z-index:2;
+}
+
+
+/* LABEL */
+
+.float-label{
+    position:absolute;
+
+    left:50px;
+
+    white-space:nowrap;
+
+    padding:6px 9px;
+
+    border-radius:8px;
+
+    background:rgba(0,0,0,.92);
+
+    color:#fff;
+
+    font-size:10px;
+    font-weight:700;
+
+    opacity:0;
+
+    transform:translateX(-8px);
+
+    pointer-events:none;
+
+    transition:.25s ease;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.4);
+}
+
+
+/* HOVER LABEL */
+
+.float-btn:hover .float-label{
+    opacity:1;
+    transform:translateX(0);
+}
+
+
+/* HOVER BUTTON */
+
+.float-btn:hover{
+    transform:scale(1.12);
+
+    animation-play-state:paused;
+}
+
+
+/* COLORS */
+
+.join-group{
+    background:linear-gradient(135deg,#075e54,#128c7e);
+}
+
+.whatsapp-admin{
+    background:linear-gradient(135deg,#16a34a,#25D366);
+}
+
+.call-admin{
+    background:linear-gradient(135deg,#1557df,#347cff);
+}
+
+.location{
+    background:linear-gradient(135deg,#e9232c,#ff5258);
+}
+
+
+/* SHINE */
+
+.float-btn::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:60%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    transform:skewX(-20deg);
+
+    animation:floatShine 4s infinite;
+
+    border-radius:50%;
+}
+
+
+@keyframes floatShine{
+
+    0%{
+        left:-100%;
+    }
+
+    35%,100%{
+        left:140%;
+    }
+
+}
+
+
+@keyframes floatPulse{
+
+    0%,100%{
+        box-shadow:
+        0 5px 15px rgba(0,0,0,.55),
+        0 0 0 0 rgba(255,255,255,.20);
+    }
+
+    50%{
+        box-shadow:
+        0 5px 15px rgba(0,0,0,.55),
+        0 0 0 6px rgba(255,255,255,0);
+    }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media(max-width:600px){
+
+    .floating-actions{
+        left:7px;
+        bottom:18px;
+        gap:8px;
+    }
+
+    .float-btn{
+        width:40px;
+        height:40px;
+    }
+
+    .float-icon{
+        font-size:18px;
+    }
+
+    .float-label{
+        left:47px;
+        font-size:9px;
+        padding:5px 7px;
+    }
+
+}
+
+
+/* =================================
+   VERY SMALL SCREEN
+================================= */
+
+@media(max-width:380px){
+
+    .floating-actions{
+        left:5px;
+        bottom:15px;
+        gap:6px;
+    }
+
+    .float-btn{
+        width:36px;
+        height:36px;
+    }
+
+    .float-icon{
+        font-size:16px;
+    }
+
+    .float-label{
+        left:43px;
+        font-size:8px;
+    }
+
 }
 
 </style>
