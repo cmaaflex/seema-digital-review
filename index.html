@@ -392,59 +392,88 @@ font-size:15px;
 }
 
 .float{
-
-position:fixed;
-
-right:18px;
-
-bottom:18px;
-
-display:flex;
-
-flex-direction:column;
-
-gap:12px;
-
+    position:fixed;
+    right:10px;
+    bottom:12px;
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+    z-index:9999;
+    align-items:center;
 }
 
-.float a{
+.float-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:3px;
+}
 
-width:58px;
+.float-item a{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    color:#fff;
+    font-size:19px;
+    box-shadow:0 6px 16px rgba(0,0,0,.28);
+    transition:all .25s ease;
+}
 
-height:58px;
+.float-item a:hover{
+    transform:scale(1.10);
+}
 
-border-radius:50%;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-text-decoration:none;
-
-color:#fff;
-
-font-size:22px;
-
-box-shadow:0 10px 25px rgba(0,0,0,.35);
-
+.float-item span{
+    font-size:9px;
+    font-weight:600;
+    color:#fff;
+    background:rgba(0,0,0,.65);
+    padding:2px 6px;
+    border-radius:6px;
+    white-space:nowrap;
+    line-height:14px;
 }
 
 .fgroup{
-background:#075E54;
+    background:#075E54;
 }
 
 .fwa{
-background:#25D366;
+    background:#25D366;
 }
 
 .fcall{
-background:#2563eb;
+    background:#2563eb;
 }
 
 .fmap{
-background:#EA4335;
+    background:#EA4335;
+}
+
+@media(max-width:500px){
+
+    .float{
+        right:7px;
+        bottom:10px;
+        gap:6px;
+    }
+
+    .float-item a{
+        width:45px;
+        height:45px;
+        font-size:18px;
+    }
+
+    .float-item span{
+        font-size:8px;
+        padding:2px 5px;
+    }
+
+}
 }
 </style>
 
@@ -782,32 +811,48 @@ href="https://chat.whatsapp.com/CFzoN2GLvGVAsxUBkMVuXj">
 
 <div class="float">
 
-<a class="fgroup"
-href="https://chat.whatsapp.com/CFzoN2GLvGVAsxUBkMVuXj"
-target="_blank"
-title="Join Group">
-<i class="fab fa-whatsapp"></i>
-</a>
+    <!-- WhatsApp Group -->
+    <div class="float-item">
+        <a class="fgroup"
+           href="https://chat.whatsapp.com/CFzoN2GLvGVAsxUBkMVuXj"
+           target="_blank"
+           title="Join Group">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <span>Join Group</span>
+    </div>
 
-<a class="fwa"
-href="https://wa.me/919767610061"
-target="_blank"
-title="WhatsApp Admin">
-<i class="fab fa-whatsapp"></i>
-</a>
+    <!-- WhatsApp Admin -->
+    <div class="float-item">
+        <a class="fwa"
+           href="https://wa.me/919767610061"
+           target="_blank"
+           title="WhatsApp Admin">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <span>WhatsApp Admin</span>
+    </div>
 
-<a class="fcall"
-href="tel:+919767610061"
-title="Call">
-<i class="fa fa-phone"></i>
-</a>
+    <!-- Call -->
+    <div class="float-item">
+        <a class="fcall"
+           href="tel:+919767610061"
+           title="Call Admin">
+            <i class="fa fa-phone"></i>
+        </a>
+        <span>Call Admin</span>
+    </div>
 
-<a class="fmap"
-href="https://maps.google.com/?q=Seema+Digital+Kannad"
-target="_blank"
-title="Location">
-<i class="fa fa-location-dot"></i>
-</a>
+    <!-- Location -->
+    <div class="float-item">
+        <a class="fmap"
+           href="https://maps.google.com/?q=Seema+Digital+Kannad"
+           target="_blank"
+           title="Location">
+            <i class="fa fa-location-dot"></i>
+        </a>
+        <span>Location</span>
+    </div>
 
 </div>
 
