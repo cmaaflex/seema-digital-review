@@ -639,7 +639,554 @@ footer{
     *::after{
         animation:none!important;
         transition:none!important;
+/* =========================================================
+   PREMIUM CLICKABLE BUTTONS + FLOATING BUTTONS
+   ========================================================= */
+
+/* ALL IMPORTANT LINKS / BUTTONS */
+
+.glass a[href],
+.glass button{
+    position:relative;
+    display:flex !important;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    width:100%;
+    min-height:48px;
+    padding:13px 18px;
+    margin:10px 0;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.14);
+    font-size:14px;
+    font-weight:800;
+    letter-spacing:.1px;
+    text-decoration:none;
+    cursor:pointer;
+    overflow:hidden;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.25),
+        inset 0 1px 0 rgba(255,255,255,.18);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        filter .25s ease;
+}
+
+
+/* MOVING LIGHT */
+
+.glass a[href]::before,
+.glass button::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:70%;
+    height:100%;
+
+    background:linear-gradient(
+        100deg,
+        transparent,
+        rgba(255,255,255,.28),
+        transparent
+    );
+
+    transform:skewX(-20deg);
+    animation:buttonShine 3.2s ease-in-out infinite;
+}
+
+
+/* CLICK INDICATOR */
+
+.glass a[href]::after,
+.glass button::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:inherit;
+    box-shadow:
+        0 0 0 0 rgba(255,255,255,.25);
+    animation:buttonPulse 2.5s infinite;
+    pointer-events:none;
+}
+
+@keyframes buttonShine{
+
+    0%{
+        left:-120%;
     }
+
+    45%,
+    100%{
+        left:150%;
+    }
+
+}
+
+@keyframes buttonPulse{
+
+    0%{
+        box-shadow:0 0 0 0 rgba(255,255,255,.20);
+    }
+
+    70%{
+        box-shadow:0 0 0 8px rgba(255,255,255,0);
+    }
+
+    100%{
+        box-shadow:0 0 0 0 rgba(255,255,255,0);
+    }
+
+}
+
+
+/* HOVER */
+
+.glass a[href]:hover,
+.glass button:hover{
+
+    transform:
+        translateY(-3px)
+        scale(1.015);
+
+    filter:brightness(1.12);
+
+    box-shadow:
+        0 14px 35px rgba(0,0,0,.40),
+        0 0 25px rgba(239,32,40,.16),
+        inset 0 1px 0 rgba(255,255,255,.25);
+}
+
+
+/* CLICK */
+
+.glass a[href]:active,
+.glass button:active{
+
+    transform:scale(.96);
+
+    box-shadow:
+        0 5px 12px rgba(0,0,0,.35);
+}
+
+
+/* =========================================================
+   GOOGLE REVIEW
+   ========================================================= */
+
+.glass a[href*="g.page"],
+.glass a[href*="google"]{
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f4f4f4
+        ) !important;
+
+    color:#2875f5 !important;
+
+    border:1px solid rgba(255,255,255,.8);
+
+    box-shadow:
+        0 10px 30px rgba(255,255,255,.10),
+        0 0 20px rgba(66,133,244,.12);
+}
+
+
+/* =========================================================
+   WHATSAPP
+   ========================================================= */
+
+.glass a[href*="wa.me"],
+.glass a[href*="whatsapp"]{
+
+    background:
+        linear-gradient(
+            135deg,
+            #20c963,
+            #25D366
+        ) !important;
+
+    color:#fff !important;
+
+    box-shadow:
+        0 10px 28px rgba(37,211,102,.22);
+}
+
+
+/* =========================================================
+   PHONE / CALL
+   ========================================================= */
+
+.glass a[href^="tel:"]{
+
+    background:
+        linear-gradient(
+            135deg,
+            #1758df,
+            #347cff
+        ) !important;
+
+    color:#fff !important;
+
+    box-shadow:
+        0 10px 28px rgba(40,117,245,.22);
+}
+
+
+/* =========================================================
+   MAP
+   ========================================================= */
+
+.glass a[href*="maps"],
+.glass a[href*="google.com/maps"]{
+
+    background:
+        linear-gradient(
+            135deg,
+            #e9232c,
+            #ff4b52
+        ) !important;
+
+    color:#fff !important;
+
+    box-shadow:
+        0 10px 28px rgba(239,32,40,.24);
+}
+
+
+/* =========================================================
+   WHATSAPP GROUP
+   ========================================================= */
+
+.glass a[href*="chat.whatsapp.com"]{
+
+    background:
+        linear-gradient(
+            135deg,
+            #075e54,
+            #128c7e
+        ) !important;
+
+    color:#fff !important;
+
+    box-shadow:
+        0 10px 28px rgba(18,140,126,.25);
+}
+
+
+/* =========================================================
+   FLOATING BUTTON AREA
+   ========================================================= */
+
+.float{
+
+    position:fixed !important;
+
+    right:18px !important;
+    bottom:18px !important;
+
+    z-index:99999 !important;
+
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:flex-end !important;
+
+    gap:10px !important;
+
+}
+
+
+/* FLOATING BUTTON */
+
+.float a{
+
+    position:relative !important;
+
+    width:52px !important;
+    height:52px !important;
+
+    min-height:52px !important;
+
+    padding:0 !important;
+    margin:0 !important;
+
+    flex:none !important;
+
+    display:flex !important;
+
+    align-items:center !important;
+    justify-content:center !important;
+
+    border-radius:50% !important;
+
+    color:#fff !important;
+
+    font-size:21px !important;
+
+    text-decoration:none !important;
+
+    border:1px solid rgba(255,255,255,.22) !important;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.55),
+        inset 0 1px 0 rgba(255,255,255,.25);
+
+    animation:floatButton 2.5s ease-in-out infinite;
+
+}
+
+
+/* EACH BUTTON SLIGHTLY DIFFERENT TIMING */
+
+.float a:nth-child(1){
+    animation-delay:0s;
+}
+
+.float a:nth-child(2){
+    animation-delay:.25s;
+}
+
+.float a:nth-child(3){
+    animation-delay:.5s;
+}
+
+.float a:nth-child(4){
+    animation-delay:.75s;
+}
+
+
+@keyframes floatButton{
+
+    0%,
+    100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-5px);
+    }
+
+}
+
+
+/* FLOAT HOVER */
+
+.float a:hover{
+
+    transform:
+        translateY(-4px)
+        scale(1.12) !important;
+
+    animation-play-state:paused;
+
+    box-shadow:
+        0 14px 35px rgba(0,0,0,.65),
+        0 0 22px rgba(255,255,255,.18);
+
+}
+
+
+/* FLOATING LABELS */
+
+.float a::after{
+
+    position:absolute !important;
+
+    right:64px !important;
+    top:50% !important;
+
+    transform:
+        translateY(-50%)
+        translateX(8px) !important;
+
+    white-space:nowrap !important;
+
+    padding:8px 12px !important;
+
+    border-radius:10px !important;
+
+    background:
+        rgba(8,8,10,.92) !important;
+
+    border:1px solid rgba(255,255,255,.13) !important;
+
+    color:#fff !important;
+
+    font-size:11px !important;
+    font-weight:800 !important;
+
+    letter-spacing:.1px !important;
+
+    opacity:0 !important;
+
+    pointer-events:none !important;
+
+    transition:
+        opacity .25s ease,
+        transform .25s ease !important;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.4);
+
+}
+
+
+/* SHOW LABEL ON HOVER */
+
+.float a:hover::after{
+
+    opacity:1 !important;
+
+    transform:
+        translateY(-50%)
+        translateX(0) !important;
+
+}
+
+
+/* FLOATING COLORS */
+
+.float .fwa{
+
+    background:
+        linear-gradient(
+            135deg,
+            #075e54,
+            #128c7e
+        ) !important;
+
+}
+
+.float .fcall{
+
+    background:
+        linear-gradient(
+            135deg,
+            #1758df,
+            #347cff
+        ) !important;
+
+}
+
+.float .fmap{
+
+    background:
+        linear-gradient(
+            135deg,
+            #e9232c,
+            #ff4b52
+        ) !important;
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:600px){
+
+    .glass a[href],
+    .glass button{
+
+        min-height:50px;
+
+        padding:13px 15px;
+
+        border-radius:14px;
+
+    }
+
+
+    .float{
+
+        right:12px !important;
+        bottom:14px !important;
+
+        gap:9px !important;
+
+    }
+
+
+    .float a{
+
+        width:48px !important;
+        height:48px !important;
+        min-height:48px !important;
+
+        font-size:19px !important;
+
+    }
+
+    .float a::after{
+
+        right:59px !important;
+
+        font-size:10px !important;
+
+        padding:7px 10px !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   CLICK ME ATTENTION
+   ========================================================= */
+
+.glass a[href*="g.page"]{
+    animation:
+        reviewAttention 2.8s ease-in-out infinite;
+}
+
+@keyframes reviewAttention{
+
+    0%,
+    100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.025);
+    }
+
+}
+
+
+/* =========================================================
+   RED CLICK INDICATOR
+   ========================================================= */
+
+.glass a[href*="g.page"] span,
+.glass a[href*="chat.whatsapp.com"] span{
+
+    position:relative;
+    z-index:2;
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    .glass a,
+    .glass button,
+    .float a{
+
+        animation:none !important;
+
+    }
+
+}    }
 }
 </style>
 
