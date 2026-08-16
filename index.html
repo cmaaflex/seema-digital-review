@@ -421,103 +421,6 @@ a{
     text-decoration:none;
 }
 
-/* Floating buttons */
-
-.float{
-   .float{
-    right:10px !important;
-    top:100px !important;
-    bottom:auto !important;
-    gap:8px !important;
-}
-
-    z-index:999999 !important;
-
-    display:flex !important;
-    flex-direction:column !important;
-    align-items:flex-end !important;
-
-    gap:10px !important;
-}
-}
-
-.float a{
-    position:relative;
-    width:52px;
-    height:52px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#fff;
-    font-size:21px;
-    text-decoration:none;
-    box-shadow:
-        0 10px 25px rgba(0,0,0,.45),
-        inset 0 1px 0 rgba(255,255,255,.18);
-    transition:.3s ease;
-}
-
-.float a:hover{
-    transform:scale(1.08);
-}
-
-.float a::after{
-    position:absolute;
-    right:63px;
-    white-space:nowrap;
-    padding:6px 10px;
-    border-radius:7px;
-    background:rgba(0,0,0,.85);
-    border:1px solid rgba(255,255,255,.10);
-    color:#fff;
-    font-size:10px;
-    font-weight:700;
-    opacity:0;
-    pointer-events:none;
-    transform:translateX(5px);
-    transition:.25s ease;
-}
-
-.float a:hover::after{
-    opacity:1;
-    transform:translateX(0);
-}
-
-.fwa{
-    background:#075e54!important;
-}
-
-.fwa::after{
-    content:"Join Group";
-}
-
-.fcall{
-    background:#2563eb!important;
-}
-
-.fcall::after{
-    content:"Call Admin";
-}
-
-.fmap{
-    background:#ea4335!important;
-}
-
-.fmap::after{
-    content:"Location";
-}
-
-/* WhatsApp Admin */
-
-.float .whatsapp-admin{
-    background:#25D366!important;
-}
-
-.float .whatsapp-admin::after{
-    content:"WhatsApp Admin";
-}
-
 /* Footer */
 
 footer{
@@ -580,22 +483,6 @@ footer{
         padding:18px;
         border-radius:19px;
     }
-
-    .float{
-        right:12px;
-        bottom:14px;
-        gap:8px;
-    }
-
-    .float a{
-        width:46px;
-        height:46px;
-        font-size:18px;
-    }
-
-    .float a::after{
-        right:56px;
-    }
 }
 
 /* Extra small phones */
@@ -613,11 +500,6 @@ footer{
     .rating{
         font-size:11px;
         padding:8px 12px;
-    }
-
-    .float a{
-        width:43px;
-        height:43px;
     }
 }
 
@@ -646,569 +528,9 @@ footer{
     *::after{
         animation:none!important;
         transition:none!important;
-/* =========================================================
-   PREMIUM CLICKABLE BUTTONS + FLOATING BUTTONS
-   ========================================================= */
-
-/* ALL IMPORTANT LINKS / BUTTONS */
-
-.glass a[href],
-.glass button{
-    position:relative;
-    display:flex !important;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    width:100%;
-    min-height:48px;
-    padding:13px 18px;
-    margin:10px 0;
-    border-radius:14px;
-    border:1px solid rgba(255,255,255,.14);
-    font-size:14px;
-    font-weight:800;
-    letter-spacing:.1px;
-    text-decoration:none;
-    cursor:pointer;
-    overflow:hidden;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,.25),
-        inset 0 1px 0 rgba(255,255,255,.18);
-
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease,
-        filter .25s ease;
-}
-
-
-/* MOVING LIGHT */
-
-.glass a[href]::before,
-.glass button::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:-120%;
-    width:70%;
-    height:100%;
-
-    background:linear-gradient(
-        100deg,
-        transparent,
-        rgba(255,255,255,.28),
-        transparent
-    );
-
-    transform:skewX(-20deg);
-    animation:buttonShine 3.2s ease-in-out infinite;
-}
-
-
-/* CLICK INDICATOR */
-
-.glass a[href]::after,
-.glass button::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    border-radius:inherit;
-    box-shadow:
-        0 0 0 0 rgba(255,255,255,.25);
-    animation:buttonPulse 2.5s infinite;
-    pointer-events:none;
-}
-
-@keyframes buttonShine{
-
-    0%{
-        left:-120%;
     }
-
-    45%,
-    100%{
-        left:150%;
-    }
-
 }
 
-@keyframes buttonPulse{
-
-    0%{
-        box-shadow:0 0 0 0 rgba(255,255,255,.20);
-    }
-
-    70%{
-        box-shadow:0 0 0 8px rgba(255,255,255,0);
-    }
-
-    100%{
-        box-shadow:0 0 0 0 rgba(255,255,255,0);
-    }
-
-}
-
-
-/* HOVER */
-
-.glass a[href]:hover,
-.glass button:hover{
-
-    transform:
-        translateY(-3px)
-        scale(1.015);
-
-    filter:brightness(1.12);
-
-    box-shadow:
-        0 14px 35px rgba(0,0,0,.40),
-        0 0 25px rgba(239,32,40,.16),
-        inset 0 1px 0 rgba(255,255,255,.25);
-}
-
-
-/* CLICK */
-
-.glass a[href]:active,
-.glass button:active{
-
-    transform:scale(.96);
-
-    box-shadow:
-        0 5px 12px rgba(0,0,0,.35);
-}
-
-
-/* =========================================================
-   GOOGLE REVIEW
-   ========================================================= */
-
-.glass a[href*="g.page"],
-.glass a[href*="google"]{
-
-    background:
-        linear-gradient(
-            135deg,
-            #ffffff,
-            #f4f4f4
-        ) !important;
-
-    color:#2875f5 !important;
-
-    border:1px solid rgba(255,255,255,.8);
-
-    box-shadow:
-        0 10px 30px rgba(255,255,255,.10),
-        0 0 20px rgba(66,133,244,.12);
-}
-
-
-/* =========================================================
-   WHATSAPP
-   ========================================================= */
-
-.glass a[href*="wa.me"],
-.glass a[href*="whatsapp"]{
-
-    background:
-        linear-gradient(
-            135deg,
-            #20c963,
-            #25D366
-        ) !important;
-
-    color:#fff !important;
-
-    box-shadow:
-        0 10px 28px rgba(37,211,102,.22);
-}
-
-
-/* =========================================================
-   PHONE / CALL
-   ========================================================= */
-
-.glass a[href^="tel:"]{
-
-    background:
-        linear-gradient(
-            135deg,
-            #1758df,
-            #347cff
-        ) !important;
-
-    color:#fff !important;
-
-    box-shadow:
-        0 10px 28px rgba(40,117,245,.22);
-}
-
-
-/* =========================================================
-   MAP
-   ========================================================= */
-
-.glass a[href*="maps"],
-.glass a[href*="google.com/maps"]{
-
-    background:
-        linear-gradient(
-            135deg,
-            #e9232c,
-            #ff4b52
-        ) !important;
-
-    color:#fff !important;
-
-    box-shadow:
-        0 10px 28px rgba(239,32,40,.24);
-}
-
-
-/* =========================================================
-   WHATSAPP GROUP
-   ========================================================= */
-
-.glass a[href*="chat.whatsapp.com"]{
-
-    background:
-        linear-gradient(
-            135deg,
-            #075e54,
-            #128c7e
-        ) !important;
-
-    color:#fff !important;
-
-    box-shadow:
-        0 10px 28px rgba(18,140,126,.25);
-}
-
-
-/* =========================================================
-   FLOATING BUTTON AREA
-   ========================================================= */
-
-.float{
-
-    position:fixed !important;
-
-    right:18px !important;
-    bottom:18px !important;
-
-    z-index:99999 !important;
-
-    display:flex !important;
-    flex-direction:column !important;
-    align-items:flex-end !important;
-
-    gap:10px !important;
-
-}
-
-
-/* FLOATING BUTTON */
-
-.float a{
-
-    position:relative !important;
-
-    width:52px !important;
-    height:52px !important;
-
-    min-height:52px !important;
-
-    padding:0 !important;
-    margin:0 !important;
-
-    flex:none !important;
-
-    display:flex !important;
-
-    align-items:center !important;
-    justify-content:center !important;
-
-    border-radius:50% !important;
-
-    color:#fff !important;
-
-    font-size:21px !important;
-
-    text-decoration:none !important;
-
-    border:1px solid rgba(255,255,255,.22) !important;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.55),
-        inset 0 1px 0 rgba(255,255,255,.25);
-
-    animation:floatButton 2.5s ease-in-out infinite;
-
-}
-
-
-/* EACH BUTTON SLIGHTLY DIFFERENT TIMING */
-
-.float a:nth-child(1){
-    animation-delay:0s;
-}
-
-.float a:nth-child(2){
-    animation-delay:.25s;
-}
-
-.float a:nth-child(3){
-    animation-delay:.5s;
-}
-
-.float a:nth-child(4){
-    animation-delay:.75s;
-}
-
-
-@keyframes floatButton{
-
-    0%,
-    100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-5px);
-    }
-
-}
-
-
-/* FLOAT HOVER */
-
-.float a:hover{
-
-    transform:
-        translateY(-4px)
-        scale(1.12) !important;
-
-    animation-play-state:paused;
-
-    box-shadow:
-        0 14px 35px rgba(0,0,0,.65),
-        0 0 22px rgba(255,255,255,.18);
-
-}
-
-
-/* FLOATING LABELS */
-
-.float a::after{
-
-    position:absolute !important;
-
-    right:64px !important;
-    top:50% !important;
-
-    transform:
-        translateY(-50%)
-        translateX(8px) !important;
-
-    white-space:nowrap !important;
-
-    padding:8px 12px !important;
-
-    border-radius:10px !important;
-
-    background:
-        rgba(8,8,10,.92) !important;
-
-    border:1px solid rgba(255,255,255,.13) !important;
-
-    color:#fff !important;
-
-    font-size:11px !important;
-    font-weight:800 !important;
-
-    letter-spacing:.1px !important;
-
-    opacity:0 !important;
-
-    pointer-events:none !important;
-
-    transition:
-        opacity .25s ease,
-        transform .25s ease !important;
-
-    box-shadow:
-        0 8px 20px rgba(0,0,0,.4);
-
-}
-
-
-/* SHOW LABEL ON HOVER */
-
-.float a:hover::after{
-
-    opacity:1 !important;
-
-    transform:
-        translateY(-50%)
-        translateX(0) !important;
-
-}
-
-
-/* FLOATING COLORS */
-
-.float .fwa{
-
-    background:
-        linear-gradient(
-            135deg,
-            #075e54,
-            #128c7e
-        ) !important;
-
-}
-
-.float .fcall{
-
-    background:
-        linear-gradient(
-            135deg,
-            #1758df,
-            #347cff
-        ) !important;
-
-}
-
-.float .fmap{
-
-    background:
-        linear-gradient(
-            135deg,
-            #e9232c,
-            #ff4b52
-        ) !important;
-
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media(max-width:600px){
-
-    .glass a[href],
-    .glass button{
-
-        min-height:50px;
-
-        padding:13px 15px;
-
-        border-radius:14px;
-
-    }
-
-
-    .float{
-
-        right:12px !important;
-        bottom:14px !important;
-
-        gap:9px !important;
-
-    }
-
-
-    .float a{
-
-        width:48px !important;
-        height:48px !important;
-        min-height:48px !important;
-
-        font-size:19px !important;
-
-    }
-
-    .float a::after{
-
-        right:59px !important;
-
-        font-size:10px !important;
-
-        padding:7px 10px !important;
-
-    }
-
-}
-
-
-/* =========================================================
-   CLICK ME ATTENTION
-   ========================================================= */
-
-.glass a[href*="g.page"]{
-    animation:
-        reviewAttention 2.8s ease-in-out infinite;
-}
-
-@keyframes reviewAttention{
-
-    0%,
-    100%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.025);
-    }
-
-}
-
-
-/* =========================================================
-   RED CLICK INDICATOR
-   ========================================================= */
-
-.glass a[href*="g.page"] span,
-.glass a[href*="chat.whatsapp.com"] span{
-
-    position:relative;
-    z-index:2;
-
-}
-
-
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
-
-@media(prefers-reduced-motion:reduce){
-
-    .glass a,
-    .glass button,
-    .float a{
-
-        animation:none !important;
-
-    }
-.join-group{
-    bottom:205px !important;
-}
-
-.whatsapp-admin{
-    bottom:150px !important;
-}
-
-.call-admin{
-    bottom:95px !important;
-}
-
-.location{
-    bottom:40px !important;
-}
-}    }
-}
 </style>
 
 </head>
@@ -1802,590 +1124,139 @@ footer.innerHTML+=
 "<br><br>© "+new Date().getFullYear()+" Seema Digital";
 
 </script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  /* MAIN CLICKABLE BUTTONS */
-  document.querySelectorAll(".glass a, .glass button").forEach(function(btn){
-
-    /* Floating buttons ko main button styling se alag rakho */
-    if (getComputedStyle(btn).position === "fixed") return;
-
-    btn.classList.add("premium-click");
-
-    /* Ripple effect */
-    btn.addEventListener("click", function(e){
-      const ripple = document.createElement("span");
-      ripple.className = "click-ripple";
-
-      const rect = btn.getBoundingClientRect();
-      ripple.style.left = (e.clientX - rect.left) + "px";
-      ripple.style.top = (e.clientY - rect.top) + "px";
-
-      btn.appendChild(ripple);
-
-      setTimeout(() => ripple.remove(), 650);
-    });
-  });
-
-  /* FLOATING BUTTONS */
-  document.querySelectorAll("a").forEach(function(btn){
-
-    const style = getComputedStyle(btn);
-
-    if(style.position === "fixed"){
-
-      btn.classList.add("premium-float");
-
-      const text = btn.innerText.toLowerCase();
-
-      if(text.includes("group")){
-        btn.setAttribute("data-label","Join Group");
-      }
-      else if(text.includes("admin") && text.includes("whatsapp")){
-        btn.setAttribute("data-label","WhatsApp Admin");
-      }
-      else if(text.includes("call")){
-        btn.setAttribute("data-label","Call Admin");
-      }
-      else if(text.includes("location")){
-        btn.setAttribute("data-label","Location");
-      }
-      else{
-        btn.setAttribute("data-label","Open");
-      }
-    }
-  });
-
-});
-</script>
-
-<style>
-
-/* ===============================
-   PREMIUM MAIN BUTTONS
-================================ */
-
-.premium-click{
-    position:relative !important;
-    display:flex !important;
-    align-items:center !important;
-    justify-content:center !important;
-    gap:8px !important;
-
-    width:100% !important;
-    min-height:48px !important;
-
-    margin:12px 0 !important;
-    padding:13px 18px !important;
-
-    border:none !important;
-    border-radius:14px !important;
-
-    color:#fff !important;
-    font-size:16px !important;
-    font-weight:800 !important;
-
-    text-decoration:none !important;
-
-    cursor:pointer !important;
-    overflow:hidden !important;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,.35),
-        inset 0 1px rgba(255,255,255,.25) !important;
-
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease,
-        filter .25s ease !important;
-}
-
-/* Hover */
-.premium-click:hover{
-    transform:translateY(-3px) scale(1.02) !important;
-
-    filter:brightness(1.12) !important;
-
-    box-shadow:
-        0 12px 35px rgba(0,0,0,.55),
-        0 0 18px rgba(255,255,255,.12) !important;
-}
-
-/* Click */
-.premium-click:active{
-    transform:scale(.96) !important;
-}
-
-/* Shine animation */
-.premium-click::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:-120%;
-    width:70%;
-    height:100%;
-
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.35),
-        transparent
-    );
-
-    transform:skewX(-20deg);
-
-    animation:buttonShine 3.5s infinite;
-}
-
-@keyframes buttonShine{
-    0%{left:-120%}
-    35%{left:140%}
-    100%{left:140%}
-}
-
-/* Ripple */
-.click-ripple{
-    position:absolute;
-    width:10px;
-    height:10px;
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,.7);
-
-    transform:translate(-50%,-50%);
-    animation:ripple .65s ease-out;
-
-    pointer-events:none;
-}
-
-@keyframes ripple{
-    from{
-        width:10px;
-        height:10px;
-        opacity:.8;
-    }
-
-    to{
-        width:500px;
-        height:500px;
-        opacity:0;
-    }
-}
-
-
-/* ===============================
-   FLOATING BUTTONS
-================================ */
-
-.premium-float{
-    position:fixed !important;
-
-    right:20px !important;
-
-    width:54px !important;
-    height:54px !important;
-
-    min-height:54px !important;
-
-    padding:0 !important;
-    margin:0 !important;
-
-    border-radius:50% !important;
-
-    display:flex !important;
-    align-items:center !important;
-    justify-content:center !important;
-
-    z-index:99999 !important;
-
-    color:#fff !important;
-
-    text-decoration:none !important;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,.55),
-        0 0 0 1px rgba(255,255,255,.15) !important;
-
-    animation:floatPulse 2.5s ease-in-out infinite !important;
-
-    transition:.25s ease !important;
-}
-
-/* Floating hover */
-.premium-float:hover{
-    transform:scale(1.15) !important;
-    animation-play-state:paused !important;
-}
-
-/* Label */
-.premium-float::after{
-    content:attr(data-label);
-
-    position:absolute !important;
-
-    right:68px !important;
-    top:50% !important;
-
-    transform:translateY(-50%) translateX(8px) !important;
-
-    white-space:nowrap !important;
-
-    padding:7px 11px !important;
-
-    border-radius:9px !important;
-
-    background:rgba(0,0,0,.92) !important;
-
-    color:#fff !important;
-
-    font-size:11px !important;
-    font-weight:800 !important;
-
-    opacity:0 !important;
-
-    pointer-events:none !important;
-
-    transition:.25s ease !important;
-
-    box-shadow:0 5px 20px rgba(0,0,0,.4) !important;
-}
-
-.premium-float:hover::after{
-    opacity:1 !important;
-    transform:translateY(-50%) translateX(0) !important;
-}
-
-@keyframes floatPulse{
-    0%,100%{
-        box-shadow:
-        0 8px 25px rgba(0,0,0,.55),
-        0 0 0 0 rgba(255,255,255,.25);
-    }
-
-    50%{
-        box-shadow:
-        0 8px 25px rgba(0,0,0,.55),
-        0 0 0 9px rgba(255,255,255,0);
-    }
-}
-
-
-/* MOBILE */
-@media(max-width:600px){
-
-    .premium-float{
-        right:12px !important;
-        width:48px !important;
-        height:48px !important;
-        min-height:48px !important;
-    }
-
-    .premium-float::after{
-        right:60px !important;
-    }
-
-    .premium-click{
-        min-height:46px !important;
-        font-size:15px !important;
-    }
-}
-
-</style>
-    <!-- FLOATING QUICK ACTIONS -->
+<!-- FLOATING QUICK ACTIONS -->
 <div class="floating-actions">
 
-    <!-- JOIN WHATSAPP GROUP -->
-    <a
-        href="https://chat.whatsapp.com/CFzoN2GLvGVAsxUBkMVuXj"
-        class="float-btn join-group"
-        target="_blank"
-        aria-label="Join WhatsApp Group">
+    <a href="https://chat.whatsapp.com/CFzoN2GLvGVAsxUBkMVuXj" class="float-btn join-group" target="_blank" aria-label="Join WhatsApp Group">
         <span class="float-icon">💬</span>
         <span class="float-label">Join Group</span>
     </a>
 
-    <!-- WHATSAPP ADMIN -->
-    <a
-        href="https://wa.me/919767610061"
-        class="float-btn whatsapp-admin"
-        target="_blank"
-        aria-label="WhatsApp Admin">
+    <a href="https://wa.me/919767610061" class="float-btn whatsapp-admin" target="_blank" aria-label="WhatsApp Admin">
         <span class="float-icon">☏</span>
         <span class="float-label">WhatsApp Admin</span>
     </a>
 
-    <!-- CALL ADMIN -->
-    <a
-        href="tel:9767610061"
-        class="float-btn call-admin"
-        aria-label="Call Admin">
+    <a href="tel:9767610061" class="float-btn call-admin" aria-label="Call Admin">
         <span class="float-icon">☎</span>
         <span class="float-label">Call Admin</span>
     </a>
 
-    <!-- LOCATION -->
-    <a
-        href="https://www.google.com/maps/search/?api=1&query=SEEMA+DIGITAL+Kannad+Aurangabad"
-        class="float-btn location"
-        target="_blank"
-        aria-label="Open Location">
+    <a href="https://www.google.com/maps/search/?api=1&query=SEEMA+DIGITAL+Kannad+Aurangabad" class="float-btn location" target="_blank" aria-label="Open Location">
         <span class="float-icon">📍</span>
         <span class="float-label">Location</span>
     </a>
 
 </div>
-    <style>
 
-/* =================================
-   SEEMA DIGITAL FLOATING ACTIONS
-================================= */
-
+<style>
+/* ===============================
+   SEEMA DIGITAL FLOATING BUTTONS
+   RIGHT SIDE + FIXED + SMALL
+   =============================== */
 .floating-actions{
-    position:fixed;
-
-    left:8px;
-    bottom:22px;
-
-    z-index:2147483647;
-
-    display:flex;
-    flex-direction:column;
-    align-items:flex-start;
-
-    gap:9px;
-
-    pointer-events:none;
+    position:fixed !important;
+    right:12px !important;
+    left:auto !important;
+    top:50% !important;
+    bottom:auto !important;
+    transform:translateY(-50%) !important;
+    z-index:2147483647 !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    gap:9px !important;
+    pointer-events:none !important;
 }
 
-
-/* BUTTON */
-
-.float-btn{
-    position:relative;
-
-    width:42px;
-    height:42px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:50%;
-
-    color:#fff;
-    text-decoration:none;
-
-    pointer-events:auto;
-
-    box-shadow:
-        0 5px 15px rgba(0,0,0,.55),
-        inset 0 1px rgba(255,255,255,.25);
-
-    transition:
-        transform .25s ease,
-        width .25s ease,
-        border-radius .25s ease;
-
-    animation:floatPulse 2.5s infinite;
+.floating-actions .float-btn{
+    position:relative !important;
+    width:42px !important;
+    height:42px !important;
+    min-width:42px !important;
+    min-height:42px !important;
+    padding:0 !important;
+    margin:0 !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    border-radius:50% !important;
+    color:#fff !important;
+    text-decoration:none !important;
+    border:1px solid rgba(255,255,255,.25) !important;
+    box-shadow:0 7px 20px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.25) !important;
+    pointer-events:auto !important;
+    overflow:visible !important;
+    transition:transform .22s ease, box-shadow .22s ease !important;
+    animation:seemaFloatPulse 2.6s ease-in-out infinite !important;
 }
 
-
-/* ICON */
-
-.float-icon{
-    font-size:20px;
-    line-height:1;
-    z-index:2;
+.floating-actions .float-icon{
+    font-size:18px !important;
+    line-height:1 !important;
+    position:relative !important;
+    z-index:2 !important;
 }
 
-
-/* LABEL */
-
-.float-label{
-    position:absolute;
-
-    left:50px;
-
-    white-space:nowrap;
-
-    padding:6px 9px;
-
-    border-radius:8px;
-
-    background:rgba(0,0,0,.92);
-
-    color:#fff;
-
-    font-size:10px;
-    font-weight:700;
-
-    opacity:0;
-
-    transform:translateX(-8px);
-
-    pointer-events:none;
-
-    transition:.25s ease;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.4);
+.floating-actions .float-label{
+    position:absolute !important;
+    right:50px !important;
+    left:auto !important;
+    top:50% !important;
+    transform:translateY(-50%) translateX(6px) !important;
+    white-space:nowrap !important;
+    padding:5px 8px !important;
+    border-radius:7px !important;
+    background:rgba(0,0,0,.94) !important;
+    border:1px solid rgba(255,255,255,.15) !important;
+    color:#fff !important;
+    font-size:9px !important;
+    font-weight:700 !important;
+    opacity:0 !important;
+    pointer-events:none !important;
+    transition:opacity .2s ease, transform .2s ease !important;
 }
 
-
-/* HOVER LABEL */
-
-.float-btn:hover .float-label{
-    opacity:1;
-    transform:translateX(0);
+.floating-actions .float-btn:hover{
+    transform:scale(1.12) !important;
+    animation-play-state:paused !important;
 }
 
-
-/* HOVER BUTTON */
-
-.float-btn:hover{
-    transform:scale(1.12);
-
-    animation-play-state:paused;
+.floating-actions .float-btn:hover .float-label{
+    opacity:1 !important;
+    transform:translateY(-50%) translateX(0) !important;
 }
 
+.floating-actions .join-group{background:linear-gradient(135deg,#075e54,#128c7e) !important;}
+.floating-actions .whatsapp-admin{background:linear-gradient(135deg,#16a34a,#25D366) !important;}
+.floating-actions .call-admin{background:linear-gradient(135deg,#1557df,#347cff) !important;}
+.floating-actions .location{background:linear-gradient(135deg,#e9232c,#ff5258) !important;}
 
-/* COLORS */
-
-.join-group{
-    background:linear-gradient(135deg,#075e54,#128c7e);
+@keyframes seemaFloatPulse{
+    0%,100%{box-shadow:0 7px 20px rgba(0,0,0,.55),0 0 0 0 rgba(255,255,255,.18);}
+    50%{box-shadow:0 7px 20px rgba(0,0,0,.55),0 0 0 5px rgba(255,255,255,0);}
 }
-
-.whatsapp-admin{
-    background:linear-gradient(135deg,#16a34a,#25D366);
-}
-
-.call-admin{
-    background:linear-gradient(135deg,#1557df,#347cff);
-}
-
-.location{
-    background:linear-gradient(135deg,#e9232c,#ff5258);
-}
-
-
-/* SHINE */
-
-.float-btn::before{
-    content:"";
-
-    position:absolute;
-
-    top:0;
-    left:-100%;
-
-    width:60%;
-    height:100%;
-
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.35),
-        transparent
-    );
-
-    transform:skewX(-20deg);
-
-    animation:floatShine 4s infinite;
-
-    border-radius:50%;
-}
-
-
-@keyframes floatShine{
-
-    0%{
-        left:-100%;
-    }
-
-    35%,100%{
-        left:140%;
-    }
-
-}
-
-
-@keyframes floatPulse{
-
-    0%,100%{
-        box-shadow:
-        0 5px 15px rgba(0,0,0,.55),
-        0 0 0 0 rgba(255,255,255,.20);
-    }
-
-    50%{
-        box-shadow:
-        0 5px 15px rgba(0,0,0,.55),
-        0 0 0 6px rgba(255,255,255,0);
-    }
-
-}
-
-
-/* =================================
-   MOBILE
-================================= */
 
 @media(max-width:600px){
-
     .floating-actions{
-        left:7px;
-        bottom:18px;
-        gap:8px;
+        right:7px !important;
+        left:auto !important;
+        top:50% !important;
+        bottom:auto !important;
+        transform:translateY(-50%) !important;
+        gap:7px !important;
     }
-
-    .float-btn{
-        width:40px;
-        height:40px;
+    .floating-actions .float-btn{
+        width:38px !important;
+        height:38px !important;
+        min-width:38px !important;
+        min-height:38px !important;
     }
-
-    .float-icon{
-        font-size:18px;
-    }
-
-    .float-label{
-        left:47px;
-        font-size:9px;
-        padding:5px 7px;
-    }
-
+    .floating-actions .float-icon{font-size:16px !important;}
+    .floating-actions .float-label{right:45px !important;font-size:8px !important;}
 }
-
-
-/* =================================
-   VERY SMALL SCREEN
-================================= */
-
-@media(max-width:380px){
-
-    .floating-actions{
-        left:5px;
-        bottom:15px;
-        gap:6px;
-    }
-
-    .float-btn{
-        width:36px;
-        height:36px;
-    }
-
-    .float-icon{
-        font-size:16px;
-    }
-
-    .float-label{
-        left:43px;
-        font-size:8px;
-    }
-
-}
-
 </style>
+
 </body>
 
 </html>
