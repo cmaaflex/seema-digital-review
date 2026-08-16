@@ -1829,7 +1829,297 @@ footer.innerHTML+=
 "<br><br>© "+new Date().getFullYear()+" Seema Digital";
 
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+  /* MAIN CLICKABLE BUTTONS */
+  document.querySelectorAll(".glass a, .glass button").forEach(function(btn){
+
+    /* Floating buttons ko main button styling se alag rakho */
+    if (getComputedStyle(btn).position === "fixed") return;
+
+    btn.classList.add("premium-click");
+
+    /* Ripple effect */
+    btn.addEventListener("click", function(e){
+      const ripple = document.createElement("span");
+      ripple.className = "click-ripple";
+
+      const rect = btn.getBoundingClientRect();
+      ripple.style.left = (e.clientX - rect.left) + "px";
+      ripple.style.top = (e.clientY - rect.top) + "px";
+
+      btn.appendChild(ripple);
+
+      setTimeout(() => ripple.remove(), 650);
+    });
+  });
+
+  /* FLOATING BUTTONS */
+  document.querySelectorAll("a").forEach(function(btn){
+
+    const style = getComputedStyle(btn);
+
+    if(style.position === "fixed"){
+
+      btn.classList.add("premium-float");
+
+      const text = btn.innerText.toLowerCase();
+
+      if(text.includes("group")){
+        btn.setAttribute("data-label","Join Group");
+      }
+      else if(text.includes("admin") && text.includes("whatsapp")){
+        btn.setAttribute("data-label","WhatsApp Admin");
+      }
+      else if(text.includes("call")){
+        btn.setAttribute("data-label","Call Admin");
+      }
+      else if(text.includes("location")){
+        btn.setAttribute("data-label","Location");
+      }
+      else{
+        btn.setAttribute("data-label","Open");
+      }
+    }
+  });
+
+});
+</script>
+
+<style>
+
+/* ===============================
+   PREMIUM MAIN BUTTONS
+================================ */
+
+.premium-click{
+    position:relative !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:8px !important;
+
+    width:100% !important;
+    min-height:48px !important;
+
+    margin:12px 0 !important;
+    padding:13px 18px !important;
+
+    border:none !important;
+    border-radius:14px !important;
+
+    color:#fff !important;
+    font-size:16px !important;
+    font-weight:800 !important;
+
+    text-decoration:none !important;
+
+    cursor:pointer !important;
+    overflow:hidden !important;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.35),
+        inset 0 1px rgba(255,255,255,.25) !important;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        filter .25s ease !important;
+}
+
+/* Hover */
+.premium-click:hover{
+    transform:translateY(-3px) scale(1.02) !important;
+
+    filter:brightness(1.12) !important;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.55),
+        0 0 18px rgba(255,255,255,.12) !important;
+}
+
+/* Click */
+.premium-click:active{
+    transform:scale(.96) !important;
+}
+
+/* Shine animation */
+.premium-click::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:70%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    transform:skewX(-20deg);
+
+    animation:buttonShine 3.5s infinite;
+}
+
+@keyframes buttonShine{
+    0%{left:-120%}
+    35%{left:140%}
+    100%{left:140%}
+}
+
+/* Ripple */
+.click-ripple{
+    position:absolute;
+    width:10px;
+    height:10px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.7);
+
+    transform:translate(-50%,-50%);
+    animation:ripple .65s ease-out;
+
+    pointer-events:none;
+}
+
+@keyframes ripple{
+    from{
+        width:10px;
+        height:10px;
+        opacity:.8;
+    }
+
+    to{
+        width:500px;
+        height:500px;
+        opacity:0;
+    }
+}
+
+
+/* ===============================
+   FLOATING BUTTONS
+================================ */
+
+.premium-float{
+    position:fixed !important;
+
+    right:20px !important;
+
+    width:54px !important;
+    height:54px !important;
+
+    min-height:54px !important;
+
+    padding:0 !important;
+    margin:0 !important;
+
+    border-radius:50% !important;
+
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    z-index:99999 !important;
+
+    color:#fff !important;
+
+    text-decoration:none !important;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.55),
+        0 0 0 1px rgba(255,255,255,.15) !important;
+
+    animation:floatPulse 2.5s ease-in-out infinite !important;
+
+    transition:.25s ease !important;
+}
+
+/* Floating hover */
+.premium-float:hover{
+    transform:scale(1.15) !important;
+    animation-play-state:paused !important;
+}
+
+/* Label */
+.premium-float::after{
+    content:attr(data-label);
+
+    position:absolute !important;
+
+    right:68px !important;
+    top:50% !important;
+
+    transform:translateY(-50%) translateX(8px) !important;
+
+    white-space:nowrap !important;
+
+    padding:7px 11px !important;
+
+    border-radius:9px !important;
+
+    background:rgba(0,0,0,.92) !important;
+
+    color:#fff !important;
+
+    font-size:11px !important;
+    font-weight:800 !important;
+
+    opacity:0 !important;
+
+    pointer-events:none !important;
+
+    transition:.25s ease !important;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.4) !important;
+}
+
+.premium-float:hover::after{
+    opacity:1 !important;
+    transform:translateY(-50%) translateX(0) !important;
+}
+
+@keyframes floatPulse{
+    0%,100%{
+        box-shadow:
+        0 8px 25px rgba(0,0,0,.55),
+        0 0 0 0 rgba(255,255,255,.25);
+    }
+
+    50%{
+        box-shadow:
+        0 8px 25px rgba(0,0,0,.55),
+        0 0 0 9px rgba(255,255,255,0);
+    }
+}
+
+
+/* MOBILE */
+@media(max-width:600px){
+
+    .premium-float{
+        right:12px !important;
+        width:48px !important;
+        height:48px !important;
+        min-height:48px !important;
+    }
+
+    .premium-float::after{
+        right:60px !important;
+    }
+
+    .premium-click{
+        min-height:46px !important;
+        font-size:15px !important;
+    }
+}
+
+</style>
 </body>
 
 </html>
