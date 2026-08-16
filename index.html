@@ -557,7 +557,7 @@ footer{
 
 </div>
 
-<h1>✨ SEEMA DIGITAL ✨</h1>
+<h1>SEEMA DIGITAL</h1>
 
 <div class="subtitle">
 
@@ -1125,24 +1125,32 @@ footer.innerHTML+=
 
 </script>
 <!-- FLOATING QUICK ACTIONS -->
-<div class="floating-actions">
+<div class="floating-actions" aria-label="Quick actions">
 
-    <a href="https://chat.whatsapp.com/CFzoN2GLvGVAsxUBkMVuXj" class="float-btn join-group" target="_blank" aria-label="Join WhatsApp Group">
+    <a href="https://chat.whatsapp.com/CFzoN2GLvGVAsxUBkMVuXj"
+       class="float-btn join-group" target="_blank" rel="noopener"
+       aria-label="Join WhatsApp Group">
         <span class="float-icon">💬</span>
         <span class="float-label">Join Group</span>
     </a>
 
-    <a href="https://wa.me/919767610061" class="float-btn whatsapp-admin" target="_blank" aria-label="WhatsApp Admin">
+    <a href="https://wa.me/919767610061"
+       class="float-btn whatsapp-admin" target="_blank" rel="noopener"
+       aria-label="WhatsApp Admin">
         <span class="float-icon">☏</span>
         <span class="float-label">WhatsApp Admin</span>
     </a>
 
-    <a href="tel:9767610061" class="float-btn call-admin" aria-label="Call Admin">
+    <a href="tel:9767610061"
+       class="float-btn call-admin"
+       aria-label="Call Admin">
         <span class="float-icon">☎</span>
         <span class="float-label">Call Admin</span>
     </a>
 
-    <a href="https://www.google.com/maps/search/?api=1&query=SEEMA+DIGITAL+Kannad+Aurangabad" class="float-btn location" target="_blank" aria-label="Open Location">
+    <a href="https://www.google.com/maps/search/?api=1&query=SEEMA+DIGITAL+Kannad+Aurangabad"
+       class="float-btn location" target="_blank" rel="noopener"
+       aria-label="Open Location">
         <span class="float-icon">📍</span>
         <span class="float-label">Location</span>
     </a>
@@ -1150,49 +1158,70 @@ footer.innerHTML+=
 </div>
 
 <style>
-/* ===============================
-   SEEMA DIGITAL FLOATING BUTTONS
-   RIGHT SIDE + FIXED + SMALL
-   =============================== */
+/* =====================================================
+   SEEMA DIGITAL - PREMIUM FLOATING QUICK ACTIONS
+   Always fixed to the SCREEN while the page scrolls.
+   ===================================================== */
 .floating-actions{
     position:fixed !important;
-    right:12px !important;
-    left:auto !important;
     top:50% !important;
+    right:10px !important;
+    left:auto !important;
     bottom:auto !important;
-    transform:translateY(-50%) !important;
+    transform:translate3d(0,-50%,0) !important;
+    width:auto !important;
+    height:auto !important;
     z-index:2147483647 !important;
     display:flex !important;
     flex-direction:column !important;
-    align-items:center !important;
-    gap:9px !important;
+    align-items:flex-end !important;
+    justify-content:center !important;
+    gap:8px !important;
+    margin:0 !important;
+    padding:0 !important;
     pointer-events:none !important;
 }
 
 .floating-actions .float-btn{
     position:relative !important;
-    width:42px !important;
-    height:42px !important;
-    min-width:42px !important;
-    min-height:42px !important;
+    width:40px !important;
+    height:40px !important;
+    min-width:40px !important;
+    min-height:40px !important;
+    max-width:40px !important;
+    max-height:40px !important;
     padding:0 !important;
     margin:0 !important;
+    flex:0 0 40px !important;
     display:flex !important;
     align-items:center !important;
     justify-content:center !important;
+    box-sizing:border-box !important;
     border-radius:50% !important;
     color:#fff !important;
     text-decoration:none !important;
-    border:1px solid rgba(255,255,255,.25) !important;
-    box-shadow:0 7px 20px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.25) !important;
+    border:1px solid rgba(255,255,255,.28) !important;
+    box-shadow:0 7px 20px rgba(0,0,0,.60), inset 0 1px 0 rgba(255,255,255,.25) !important;
     pointer-events:auto !important;
     overflow:visible !important;
-    transition:transform .22s ease, box-shadow .22s ease !important;
-    animation:seemaFloatPulse 2.6s ease-in-out infinite !important;
+    cursor:pointer !important;
+    -webkit-tap-highlight-color:transparent !important;
+    will-change:transform !important;
+    animation:seemaFloatPulse 2.4s ease-in-out infinite !important;
 }
 
+.floating-actions .float-btn:nth-child(1){animation-delay:0s !important;}
+.floating-actions .float-btn:nth-child(2){animation-delay:.15s !important;}
+.floating-actions .float-btn:nth-child(3){animation-delay:.30s !important;}
+.floating-actions .float-btn:nth-child(4){animation-delay:.45s !important;}
+
 .floating-actions .float-icon{
-    font-size:18px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    width:100% !important;
+    height:100% !important;
+    font-size:17px !important;
     line-height:1 !important;
     position:relative !important;
     z-index:2 !important;
@@ -1200,63 +1229,106 @@ footer.innerHTML+=
 
 .floating-actions .float-label{
     position:absolute !important;
-    right:50px !important;
+    right:48px !important;
     left:auto !important;
     top:50% !important;
-    transform:translateY(-50%) translateX(6px) !important;
+    transform:translate3d(6px,-50%,0) !important;
     white-space:nowrap !important;
     padding:5px 8px !important;
     border-radius:7px !important;
-    background:rgba(0,0,0,.94) !important;
-    border:1px solid rgba(255,255,255,.15) !important;
+    background:rgba(5,5,7,.95) !important;
+    border:1px solid rgba(255,255,255,.16) !important;
     color:#fff !important;
     font-size:9px !important;
-    font-weight:700 !important;
+    line-height:1.2 !important;
+    font-weight:800 !important;
     opacity:0 !important;
+    visibility:hidden !important;
     pointer-events:none !important;
-    transition:opacity .2s ease, transform .2s ease !important;
+    transition:opacity .2s ease, transform .2s ease, visibility .2s ease !important;
+    box-shadow:0 6px 18px rgba(0,0,0,.45) !important;
 }
 
-.floating-actions .float-btn:hover{
-    transform:scale(1.12) !important;
-    animation-play-state:paused !important;
-}
-
-.floating-actions .float-btn:hover .float-label{
+.floating-actions .float-btn:hover .float-label,
+.floating-actions .float-btn:focus-visible .float-label{
     opacity:1 !important;
-    transform:translateY(-50%) translateX(0) !important;
+    visibility:visible !important;
+    transform:translate3d(0,-50%,0) !important;
 }
 
-.floating-actions .join-group{background:linear-gradient(135deg,#075e54,#128c7e) !important;}
-.floating-actions .whatsapp-admin{background:linear-gradient(135deg,#16a34a,#25D366) !important;}
-.floating-actions .call-admin{background:linear-gradient(135deg,#1557df,#347cff) !important;}
-.floating-actions .location{background:linear-gradient(135deg,#e9232c,#ff5258) !important;}
+.floating-actions .float-btn:hover,
+.floating-actions .float-btn:focus-visible{
+    transform:scale(1.10) !important;
+    animation-play-state:paused !important;
+    outline:none !important;
+}
+
+.floating-actions .join-group{
+    background:linear-gradient(135deg,#075e54,#128c7e) !important;
+}
+.floating-actions .whatsapp-admin{
+    background:linear-gradient(135deg,#16a34a,#25D366) !important;
+}
+.floating-actions .call-admin{
+    background:linear-gradient(135deg,#1557df,#347cff) !important;
+}
+.floating-actions .location{
+    background:linear-gradient(135deg,#e9232c,#ff5258) !important;
+}
 
 @keyframes seemaFloatPulse{
-    0%,100%{box-shadow:0 7px 20px rgba(0,0,0,.55),0 0 0 0 rgba(255,255,255,.18);}
-    50%{box-shadow:0 7px 20px rgba(0,0,0,.55),0 0 0 5px rgba(255,255,255,0);}
+    0%,100%{
+        box-shadow:0 7px 20px rgba(0,0,0,.60),0 0 0 0 rgba(255,255,255,.20);
+    }
+    50%{
+        box-shadow:0 7px 20px rgba(0,0,0,.60),0 0 0 5px rgba(255,255,255,0);
+    }
 }
 
+/* MOBILE: fixed to viewport, not document */
 @media(max-width:600px){
     .floating-actions{
+        position:fixed !important;
+        top:50dvh !important;
         right:7px !important;
         left:auto !important;
-        top:50% !important;
         bottom:auto !important;
-        transform:translateY(-50%) !important;
+        transform:translate3d(0,-50%,0) !important;
         gap:7px !important;
     }
+
     .floating-actions .float-btn{
         width:38px !important;
         height:38px !important;
         min-width:38px !important;
         min-height:38px !important;
+        max-width:38px !important;
+        max-height:38px !important;
+        flex-basis:38px !important;
     }
-    .floating-actions .float-icon{font-size:16px !important;}
-    .floating-actions .float-label{right:45px !important;font-size:8px !important;}
+
+    .floating-actions .float-icon{
+        font-size:15px !important;
+    }
+
+    /* Mobile: labels remain visible so users know what each icon does */
+    .floating-actions .float-label{
+        right:45px !important;
+        font-size:8px !important;
+        padding:4px 6px !important;
+        opacity:1 !important;
+        visibility:visible !important;
+        transform:translate3d(0,-50%,0) !important;
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+    .floating-actions .float-btn{
+        animation:none !important;
+        transition:none !important;
+    }
 }
 </style>
-
 </body>
 
 </html>
