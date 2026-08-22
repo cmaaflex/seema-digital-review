@@ -98,6 +98,11 @@ h1{
 .icon{font-size:32px;margin-bottom:7px}
 .name{font-size:21px;font-weight:900}
 .role{color:var(--muted);margin:3px 0 15px}
+.card .btn{vertical-align:middle}
+@media(min-width:601px){
+ .card .btn{min-width:142px}
+ .card .insta{min-width:154px}
+}
 .btn{
  position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:8px;
  min-height:52px;padding:12px 17px;margin:5px 4px 0 0;border-radius:15px;text-decoration:none;
@@ -110,6 +115,23 @@ h1{
 .btn i{font-size:19px;filter:drop-shadow(0 2px 2px rgba(0,0,0,.55))}
 .wa{background:linear-gradient(145deg,#31ed7a,#0eaa50)}
 .call{background:linear-gradient(145deg,#4d91ff,#1556d8)}
+.insta{
+ background:linear-gradient(135deg,#833ab4 0%,#c13584 28%,#e1306c 52%,#fd1d1d 74%,#fcb045 100%);
+ box-shadow:0 7px 0 #64135f,0 13px 25px rgba(225,48,108,.34),inset 0 1px rgba(255,255,255,.34);
+ animation:instaGlow 2.4s ease-in-out infinite;
+}
+.insta:before{
+ content:"";position:absolute;inset:-40%;pointer-events:none;
+ background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.55) 50%,transparent 58%);
+ transform:translateX(-75%);animation:instaShine 3.2s infinite;
+}
+.insta i,.insta span{position:relative;z-index:2}
+.insta i{font-size:21px}
+@keyframes instaGlow{
+ 0%,100%{filter:brightness(1);box-shadow:0 7px 0 #64135f,0 13px 25px rgba(225,48,108,.34),0 0 0 rgba(225,48,108,0)}
+ 50%{filter:brightness(1.12);box-shadow:0 7px 0 #64135f,0 15px 30px rgba(225,48,108,.42),0 0 22px rgba(252,176,69,.22)}
+}
+@keyframes instaShine{0%,58%{transform:translateX(-75%)}78%,100%{transform:translateX(75%)}}
 .map{background:linear-gradient(145deg,#ff4d55,#c70d18)}
 .group{width:100%;margin-top:12px;background:linear-gradient(145deg,#16d976,#087f45)}
 .address{
@@ -158,43 +180,165 @@ details:hover{transform:translateY(-1px)}
 }
 @keyframes ripple{to{transform:scale(4);opacity:0}}
 
+
 .floating-actions{
- position:fixed;right:12px;top:50%;transform:translateY(-50%);
- z-index:99999;display:flex;flex-direction:column;gap:12px;touch-action:none;
- transition:opacity .25s,transform .25s,filter .25s;
+ position:fixed;
+ right:12px;
+ top:50%;
+ transform:translateY(-50%);
+ z-index:99999;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ gap:34px;
+ padding:12px 4px 18px;
+ pointer-events:auto;
+ opacity:1!important;
+ visibility:visible!important;
+ touch-action:manipulation;
+ transition:transform .28s ease,filter .28s ease;
 }
-.floating-actions.is-hidden{opacity:0;pointer-events:none;transform:translate(120px,-50%)}
+
+/* Floating button */
 .float-btn{
- width:58px;height:58px;border-radius:18px;display:grid;place-items:center;
- position:relative;text-decoration:none;color:#fff;border:1px solid rgba(255,255,255,.3);
- box-shadow:0 9px 0 rgba(0,0,0,.4),0 15px 28px rgba(0,0,0,.4),inset 0 2px rgba(255,255,255,.35);
- transition:.18s;cursor:grab;
+ width:58px;
+ height:58px;
+ border-radius:18px;
+ display:grid;
+ place-items:center;
+ position:relative;
+ text-decoration:none;
+ color:#fff;
+ border:1px solid rgba(255,255,255,.34);
+ box-shadow:
+   0 9px 0 rgba(0,0,0,.42),
+   0 15px 28px rgba(0,0,0,.42),
+   inset 0 2px rgba(255,255,255,.38);
+ cursor:pointer;
+ isolation:isolate;
+ overflow:visible;
+ animation:quickFloat 3s ease-in-out infinite;
+ transition:transform .18s ease,filter .18s ease,box-shadow .18s ease;
 }
-.float-btn:active{cursor:grabbing}
+
+.float-btn:nth-child(1){animation-delay:0s}
+.float-btn:nth-child(2){animation-delay:.22s}
+.float-btn:nth-child(3){animation-delay:.44s}
+.float-btn:nth-child(4){animation-delay:.66s}
+
+.float-btn:hover,
+.float-btn:focus-visible{
+ transform:translateY(-4px) scale(1.08);
+ filter:brightness(1.12);
+ box-shadow:
+   0 11px 0 rgba(0,0,0,.42),
+   0 20px 34px rgba(0,0,0,.48),
+   0 0 22px rgba(255,255,255,.16),
+   inset 0 2px rgba(255,255,255,.4);
+}
+
+.float-btn:active{
+ transform:translateY(5px) scale(.96);
+ box-shadow:
+   0 3px 0 rgba(0,0,0,.46),
+   0 8px 17px rgba(0,0,0,.38),
+   inset 0 2px rgba(255,255,255,.32);
+}
+
+/* Icon */
 .float-icon{
- width:100%;height:100%;display:grid;place-items:center;font-size:26px;
- filter:drop-shadow(0 3px 2px rgba(0,0,0,.65))
+ width:100%;
+ height:100%;
+ display:grid;
+ place-items:center;
+ font-size:25px;
+ filter:drop-shadow(0 3px 2px rgba(0,0,0,.65));
+ position:relative;
+ z-index:3;
 }
+
+/* PERMANENT name below every icon */
 .float-label{
- position:absolute;right:68px;white-space:nowrap;padding:8px 11px;border-radius:10px;
- background:rgba(6,6,8,.94);border:1px solid rgba(255,255,255,.16);
- font-size:11px;font-weight:900;opacity:0;transform:translateX(7px);
- pointer-events:none;transition:.2s;box-shadow:0 8px 20px rgba(0,0,0,.45);
+ position:absolute;
+ left:50%;
+ right:auto;
+ top:calc(100% + 6px);
+ transform:translateX(-50%);
+ display:block!important;
+ opacity:1!important;
+ visibility:visible!important;
+ white-space:nowrap;
+ padding:3px 6px;
+ border-radius:7px;
+ background:rgba(5,5,7,.94);
+ border:1px solid rgba(255,255,255,.16);
+ color:#fff;
+ font-size:8px;
+ line-height:1.15;
+ font-weight:800;
+ letter-spacing:.1px;
+ text-align:center;
+ pointer-events:none;
+ box-shadow:0 5px 14px rgba(0,0,0,.42);
+ text-shadow:0 1px 2px rgba(0,0,0,.6);
+ z-index:5;
 }
-.float-btn:hover .float-label,.float-btn:focus-visible .float-label{opacity:1;transform:none}
-.float-btn:hover{transform:translateY(-3px) scale(1.05)}
-.join-group{background:linear-gradient(145deg,#22e17b,#087b49)}
-.whatsapp-admin{background:linear-gradient(145deg,#31ee80,#079b55)}
-.call-admin{background:linear-gradient(145deg,#4d91ff,#1655d8)}
-.location{background:linear-gradient(145deg,#ff535a,#cf1019)}
+
+/* Colors */
+.join-group{background:linear-gradient(145deg,#20d979,#087b49)}
+.whatsapp-admin{background:linear-gradient(145deg,#35f08a,#079b55)}
+.call-admin{background:linear-gradient(145deg,#5598ff,#1655d8)}
+.location{background:linear-gradient(145deg,#ff5b62,#cf1019)}
+
+/* Premium animated outer ring */
 .float-btn:before{
- content:"";position:absolute;inset:-2px;border-radius:20px;border:2px solid rgba(255,255,255,.18);
- animation:floatRing 2.2s infinite;pointer-events:none;
+ content:"";
+ position:absolute;
+ inset:-3px;
+ border-radius:21px;
+ border:2px solid rgba(255,255,255,.25);
+ box-shadow:0 0 0 rgba(255,255,255,0);
+ animation:floatRing 2.35s ease-out infinite;
+ pointer-events:none;
+ z-index:-1;
 }
-.float-btn:nth-child(2):before{animation-delay:.35s}
-.float-btn:nth-child(3):before{animation-delay:.7s}
-.float-btn:nth-child(4):before{animation-delay:1.05s}
-@keyframes floatRing{0%,100%{opacity:0;transform:scale(1)}45%{opacity:.5}75%{opacity:0;transform:scale(1.22)}}
+
+.float-btn:nth-child(2):before{animation-delay:.32s}
+.float-btn:nth-child(3):before{animation-delay:.64s}
+.float-btn:nth-child(4):before{animation-delay:.96s}
+
+/* Glossy light sweep */
+.float-btn:after{
+ content:"";
+ position:absolute;
+ top:7px;
+ left:9px;
+ width:28px;
+ height:12px;
+ border-radius:50%;
+ background:linear-gradient(180deg,rgba(255,255,255,.40),rgba(255,255,255,0));
+ filter:blur(.2px);
+ transform:rotate(-12deg);
+ pointer-events:none;
+ z-index:2;
+}
+
+@keyframes quickFloat{
+ 0%,100%{transform:translateY(0)}
+ 50%{transform:translateY(-4px)}
+}
+
+@keyframes floatRing{
+ 0%{opacity:.7;transform:scale(.96);box-shadow:0 0 0 0 rgba(255,255,255,.18)}
+ 72%{opacity:0;transform:scale(1.22);box-shadow:0 0 0 8px rgba(255,255,255,0)}
+ 100%{opacity:0;transform:scale(1.22)}
+}
+
+/* Small motion while the page is being scrolled, NEVER hides */
+.floating-actions.page-scrolling{
+ filter:drop-shadow(0 10px 14px rgba(0,0,0,.28));
+ transform:translateY(-50%) translateY(-3px);
+}
 @media(max-width:600px){
  .container{padding:8px 7px 45px}.glass{border-radius:22px;padding:10px}.banner{border-radius:16px}
  h1{font-size:35px;letter-spacing:-1px}.subtitle{font-size:14px}
@@ -203,9 +347,15 @@ details:hover{transform:translateY(-1px)}
  summary{font-size:15px;min-height:62px;padding:13px}
  summary small{font-size:10px;padding:6px 7px}
  details ul{padding-left:43px}
- .floating-actions{right:9px;gap:9px}
- .float-btn{width:49px;height:49px;border-radius:15px}
- .float-icon{font-size:21px}.float-label{right:58px;font-size:10px;padding:7px 9px}
+ .floating-actions{right:7px;top:50%;gap:29px;padding:9px 2px 14px}
+ .float-btn{width:47px;height:47px;border-radius:14px}
+ .float-icon{font-size:20px}
+ .float-label{
+   left:50%;right:auto;top:calc(100% + 5px);
+   transform:translateX(-50%);
+   display:block!important;opacity:1!important;visibility:visible!important;
+   font-size:7px;padding:3px 5px;border-radius:6px;
+ }
 }
 @media(prefers-reduced-motion:reduce){
  *,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}
@@ -255,6 +405,10 @@ href="https://g.page/r/CXrOb5EcYE5UEAI/review?utm_source=gbp&utm_medium=reviews&
 <a class="btn call" href="tel:+919767610061">
 <i class="fa-solid fa-phone"></i> Call Now
 </a>
+<a class="btn insta" target="_blank" rel="noopener noreferrer"
+href="https://www.instagram.com/seemadigital9?utm_source=qr&igsi=MWszNWE0b2R5dWNzbA%3D%3D">
+<i class="fa-brands fa-instagram"></i> <span>Follow Us</span>
+</a>
 </div>
 
 <div class="card">
@@ -266,6 +420,10 @@ href="https://g.page/r/CXrOb5EcYE5UEAI/review?utm_source=gbp&utm_medium=reviews&
 </a>
 <a class="btn call" href="tel:+919561869422">
 <i class="fa-solid fa-phone"></i> Call Now
+</a>
+<a class="btn insta" target="_blank" rel="noopener noreferrer"
+href="https://www.instagram.com/seemadigital9?utm_source=qr&igsi=MWszNWE0b2R5dWNzbA%3D%3D">
+<i class="fa-brands fa-instagram"></i> <span>Follow Us</span>
 </a>
 </div>
 
@@ -350,18 +508,18 @@ href="https://chat.whatsapp.com/CFzoN2GLvGVAsxUBkMVuXj">
 <a href="https://chat.whatsapp.com/CFzoN2GLvGVAsxUBkMVuXj" class="float-btn join-group"
 target="_blank" aria-label="Join Group">
 <span class="float-icon"><i class="fa-solid fa-user-plus"></i></span>
-<span class="float-label">Join Group</span>
+<span class="float-label">WhatsApp Group</span>
 </a>
 
 <a href="https://wa.me/919767610061" class="float-btn whatsapp-admin"
 target="_blank" aria-label="WhatsApp Admin">
 <span class="float-icon"><i class="fa-brands fa-whatsapp"></i></span>
-<span class="float-label">WhatsApp Admin</span>
+<span class="float-label">WhatsApp</span>
 </a>
 
 <a href="tel:+919767610061" class="float-btn call-admin" aria-label="Call Admin">
 <span class="float-icon"><i class="fa-solid fa-phone"></i></span>
-<span class="float-label">Call Admin</span>
+<span class="float-label">Call Now</span>
 </a>
 
 <a href="https://www.google.com/maps/search/?api=1&query=SEEMA+DIGITAL+Kannad+Aurangabad"
@@ -409,78 +567,35 @@ const observer=new IntersectionObserver(entries=>{
 },{threshold:.08});
 document.querySelectorAll(".card,details,.address,.review,.group").forEach(el=>observer.observe(el));
 
-/* Floating actions: drag vertically on touch/mouse */
+/* Floating actions: always visible while scrolling */
 (function(){
  const panel=document.getElementById("floatingActions");
  if(!panel)return;
- let dragging=false,startY=0,startTop=0,moved=false,hideTimer;
 
- const clamp=(top)=>{
-  const h=panel.offsetHeight, pad=10;
-  return Math.max(pad,Math.min(top,window.innerHeight-h-pad));
- };
- const place=(top)=>{
-  panel.style.top=clamp(top)+"px";
-  panel.style.bottom="auto";
-  panel.style.transform="none";
- };
- const show=()=>panel.classList.remove("is-hidden");
- const hide=(ms=1300)=>{
-  clearTimeout(hideTimer);
-  hideTimer=setTimeout(()=>panel.classList.add("is-hidden"),ms);
- };
+ /* Remove any old hidden state and force the panel visible */
+ panel.classList.remove("is-hidden");
+ panel.style.opacity="1";
+ panel.style.visibility="visible";
+ panel.style.pointerEvents="auto";
 
- panel.addEventListener("pointerdown",e=>{
-  if(e.pointerType==="mouse"&&e.button!==0)return;
-  dragging=true;moved=false;startY=e.clientY;startTop=panel.getBoundingClientRect().top;
-  panel.style.transition="none";
-  try{panel.setPointerCapture(e.pointerId)}catch(_){}
-  e.preventDefault();
- });
- panel.addEventListener("pointermove",e=>{
-  if(!dragging)return;
-  if(Math.abs(e.clientY-startY)>5)moved=true;
-  place(startTop+e.clientY-startY);
-  e.preventDefault();
- });
- panel.addEventListener("pointerup",e=>{
-  if(!dragging)return;
-  dragging=false;panel.style.transition="";
-  try{panel.releasePointerCapture(e.pointerId)}catch(_){}
-  if(moved){
-   panel.dataset.dragged="1";
-   setTimeout(()=>panel.dataset.dragged="0",100);
-  }
- });
- panel.addEventListener("pointercancel",()=>{dragging=false;panel.style.transition=""});
-
- panel.addEventListener("click",e=>{
-  if(panel.dataset.dragged==="1"){
-   e.preventDefault();e.stopPropagation();panel.dataset.dragged="0";return;
-  }
-  hide(800);
- },true);
-
- /* Scroll keeps buttons available briefly, then hides to avoid covering content */
- let scrollEnd;
+ let scrollTimer;
  window.addEventListener("scroll",()=>{
-  show();clearTimeout(scrollEnd);clearTimeout(hideTimer);
-  scrollEnd=setTimeout(()=>hide(1500),250);
+   panel.classList.add("page-scrolling");
+   clearTimeout(scrollTimer);
+   scrollTimer=setTimeout(()=>{
+     panel.classList.remove("page-scrolling");
+   },180);
  },{passive:true});
 
- /* Any other click/tap hides them, next scroll brings them back */
- document.addEventListener("pointerdown",e=>{
-  if(!panel.contains(e.target))hide(300);
- },{passive:true});
-
- window.addEventListener("resize",()=>{
-  if(panel.style.top)place(parseFloat(panel.style.top)||window.innerHeight/2);
- });
-
- /* Start at middle-right */
- requestAnimationFrame(()=>{
-  place(window.innerHeight/2-panel.offsetHeight/2);
- });
+ /* Keep it vertically centered when mobile browser viewport changes */
+ const keepVisible=()=>{
+   panel.style.top="50%";
+   panel.style.right=window.innerWidth<=600 ? "7px" : "12px";
+   panel.style.bottom="auto";
+ };
+ window.addEventListener("resize",keepVisible);
+ window.addEventListener("orientationchange",keepVisible);
+ keepVisible();
 })();
 
 /* Title cycle */
